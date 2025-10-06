@@ -106,14 +106,16 @@
         .slide {
             min-width: 100vw;
             width: 100vw;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
-            padding: 120px 32px 32px;
+            padding: 140px 32px 60px;
             position: relative;
             overflow-y: auto;
-            scroll-padding-top: 80px;
+            overflow-x: hidden;
+            scroll-padding-top: 140px;
+            -webkit-overflow-scrolling: touch;
         }
 
         .slide-content {
@@ -1270,7 +1272,7 @@
         }
 
         @media (max-width: 1024px) {
-            .slide { padding: 120px 32px 32px; }
+            .slide { padding: 140px 32px 60px; }
             .hero-title { font-size: 30px; }
             .slide-title { font-size: 22px; }
             .problem-headline { font-size: 22px; }
@@ -1292,7 +1294,7 @@
                 height: 24px;
             }
             .nav-cta { display: none; }
-            .slide { padding: 120px 20px 32px; }
+            .slide { padding: 140px 20px 60px; }
             .slide-counter {
                 top: 64px;
                 right: 16px;
@@ -1318,7 +1320,7 @@
             .nav-logo img {
                 height: 22px;
             }
-            .slide { padding: 110px 16px 32px; }
+            .slide { padding: 130px 16px 60px; }
             .slide-counter {
                 top: 60px;
                 right: 12px;
