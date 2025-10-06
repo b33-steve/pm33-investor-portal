@@ -1,0 +1,2479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Primary Meta Tags -->
+    <title>PM33 - Revenue Acceleration Platform | Investor Presentation</title>
+    <meta name="title" content="PM33 - Revenue Acceleration Platform | Investor Presentation">
+    <meta name="description" content="PM33 is creating the Product Management 3.0 category. AI-native revenue acceleration platform with 5.6:1 LTV:CAC and 68% gross margins. Raising $1.5M seed.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pm33.com/investors">
+    <meta property="og:title" content="PM33 - Revenue Acceleration Platform | Investor Presentation">
+    <meta property="og:description" content="AI-native revenue acceleration platform creating the PM 3.0 category. 5.6:1 LTV:CAC, 68% gross margins, $100K MRR target Q1 2026.">
+    <meta property="og:image" content="https://pm33.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pm33.com/investors">
+    <meta property="twitter:title" content="PM33 - Revenue Acceleration Platform | Investor Presentation">
+    <meta property="twitter:description" content="AI-native revenue acceleration platform creating the PM 3.0 category. 5.6:1 LTV:CAC, 68% gross margins, $100K MRR target Q1 2026.">
+    <meta property="twitter:image" content="https://pm33.com/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚀%3C/text%3E%3C/svg%3E">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==================== CSS RESET & BASE ==================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            /* Colors */
+            --color-primary: #0052CC;
+            --color-primary-dark: #003d99;
+            --color-primary-light: #4C9AFF;
+            --color-success: #00A86B;
+            --color-success-light: #36B37E;
+            --color-ai-accent: #6554C0;
+            --color-ai-light: #8777D9;
+            --color-text-primary: #172B4D;
+            --color-text-secondary: #5E6C84;
+            --color-text-tertiary: #8993A4;
+            --color-bg-primary: #FFFFFF;
+            --color-bg-secondary: #F4F5F7;
+            --color-bg-tertiary: #FAFBFC;
+            --color-border: #DFE1E6;
+            --color-border-light: #EBECF0;
+            --color-warning: #FF5630;
+
+            /* Typography - Reduced by 20% */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+
+            /* Transitions */
+            --transition-slide: 600ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: 150ms ease-in-out;
+            --transition-base: 250ms ease-in-out;
+        }
+
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--color-text-primary);
+            background-color: var(--color-bg-primary);
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* ==================== SLIDE CONTAINER ==================== */
+        .slide-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slides-wrapper {
+            display: flex;
+            height: 100%;
+            transition: transform var(--transition-slide);
+            will-change: transform;
+        }
+
+        .slide {
+            min-width: 100vw;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 32px 32px;
+            position: relative;
+            overflow-y: auto;
+        }
+
+        .slide-content {
+            max-width: 1300px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* ==================== NAVIGATION ==================== */
+        .nav-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 32px;
+        }
+
+        .nav-logo img {
+            height: 28px;
+            width: auto;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        /* Navigation Arrows */
+        .nav-arrow {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 42px;
+            height: 42px;
+            background: rgba(0, 82, 204, 0.9);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            z-index: 90;
+            transition: all var(--transition-base);
+            opacity: 0.7;
+        }
+
+        .nav-arrow:hover {
+            opacity: 1;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 12px rgba(0, 82, 204, 0.3);
+        }
+
+        .nav-arrow.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .nav-arrow.disabled:hover {
+            transform: translateY(-50%) scale(1);
+            box-shadow: none;
+        }
+
+        .nav-arrow-left {
+            left: 16px;
+        }
+
+        .nav-arrow-right {
+            right: 16px;
+        }
+
+        /* Progress Indicators */
+        .progress-dots {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 90;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--color-border);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .progress-dot:hover {
+            background: var(--color-primary-light);
+            transform: scale(1.3);
+            box-shadow: 0 4px 12px rgba(0, 82, 204, 0.4);
+        }
+
+        .progress-dot.active {
+            background: var(--color-primary);
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        /* Slide Counter */
+        .slide-counter {
+            position: fixed;
+            top: 64px;
+            right: 32px;
+            font-size: 12px;
+            color: var(--color-text-tertiary);
+            font-weight: 600;
+            z-index: 90;
+        }
+
+        /* ==================== BUTTONS ==================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 22px;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.5;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 82, 204, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0, 82, 204, 0.25);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0, 82, 204, 0.25);
+        }
+
+        .btn-outline:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-lg {
+            padding: 13px 28px;
+            font-size: 15px;
+        }
+
+        /* ==================== MODAL ==================== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: white;
+            border-radius: 12px;
+            padding: 0;
+            max-width: 540px;
+            width: 90%;
+            max-height: 85vh;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+            animation: modalSlideIn 0.3s ease-out;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal h2 {
+            padding: 24px 32px 12px;
+            margin: 0;
+        }
+
+        .modal > p {
+            padding: 0 32px 20px;
+            margin: 0;
+        }
+
+        #modal-form {
+            overflow-y: auto;
+            padding: 0 32px 24px;
+        }
+
+        #modal-form::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #modal-form::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        #modal-form::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+
+        #modal-form::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--color-text-tertiary);
+            cursor: pointer;
+            line-height: 1;
+            padding: 0;
+            width: 28px;
+            height: 28px;
+        }
+
+        .modal-close:hover {
+            color: var(--color-text-primary);
+        }
+
+        .modal h2 {
+            font-size: 22px;
+            margin-bottom: 6px;
+            color: var(--color-text-primary);
+        }
+
+        .modal p {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            margin-bottom: 22px;
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: 6px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 400;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px 14px;
+            font-size: 14px;
+            border: 2px solid var(--color-border);
+            border-radius: 6px;
+            font-family: var(--font-family);
+            transition: border-color var(--transition-fast);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .modal .btn {
+            width: 100%;
+            margin-top: 6px;
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 32px 16px;
+        }
+
+        .success-message.active {
+            display: block;
+        }
+
+        .success-message h3 {
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+
+        .success-message p {
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        /* ==================== TYPOGRAPHY ==================== */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--color-text-primary);
+        }
+
+        /* ==================== ANIMATIONS ==================== */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .animate-slide-in {
+            animation: slideInLeft 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .animate-delay-1 { animation-delay: 0ms; }
+        .animate-delay-2 { animation-delay: 200ms; }
+        .animate-delay-3 { animation-delay: 400ms; }
+        .animate-delay-4 { animation-delay: 600ms; }
+
+        /* ==================== SLIDE-SPECIFIC STYLES ==================== */
+
+        /* Slide 1: Hero */
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 16px;
+            background: rgba(101, 84, 192, 0.1);
+            border: 1px solid var(--color-ai-accent);
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--color-ai-accent);
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 42px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-ai-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            margin-bottom: 26px;
+            font-weight: 400;
+            max-width: 800px;
+            line-height: 1.5;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 13px;
+            margin-bottom: 32px;
+            justify-content: center;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 13px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border-radius: 14px;
+            padding: 16px 13px;
+            text-align: center;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(0, 82, 204, 0.3);
+        }
+
+        .metric-value {
+            font-size: 29px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-ai-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            line-height: 1.1;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .metric-sublabel {
+            font-size: 11px;
+            color: var(--color-text-tertiary);
+        }
+
+        /* Slide 2: Problem Statement */
+        .slide-header {
+            text-align: center;
+            margin-bottom: 26px;
+        }
+
+        .slide-label {
+            display: inline-block;
+            padding: 5px 14px;
+            background: rgba(0, 82, 204, 0.1);
+            color: var(--color-primary);
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .slide-title {
+            font-size: 32px;
+            margin-bottom: 14px;
+            font-weight: 800;
+        }
+
+        .slide-subtitle {
+            font-size: 16px;
+            color: var(--color-text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .problem-headline {
+            font-size: 29px;
+            font-weight: 800;
+            color: var(--color-warning);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .problem-subhead {
+            font-size: 16px;
+            color: var(--color-text-secondary);
+            text-align: center;
+            margin-bottom: 32px;
+            font-style: italic;
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 13px;
+            margin-bottom: 22px;
+        }
+
+        .data-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-left: 3px solid var(--color-warning);
+            padding: 14px;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .data-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(0, 82, 204, 0.3);
+        }
+
+        .data-stat {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--color-warning);
+            margin-bottom: 8px;
+        }
+
+        .data-label {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: 6px;
+        }
+
+        .data-description {
+            font-size: 13px;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+            margin-bottom: 6px;
+        }
+
+        .data-source {
+            font-size: 10px;
+            color: var(--color-text-tertiary);
+            font-style: italic;
+        }
+
+        /* Slide 3: Solution */
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 26px;
+        }
+
+        .capability-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 19px;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .capability-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(0, 82, 204, 0.3);
+        }
+
+        .capability-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 14px;
+        }
+
+        .capability-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--color-primary);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .capability-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--color-text-primary);
+        }
+
+        .capability-description {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Slide 4: Market Opportunity */
+        .market-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 26px 0;
+        }
+
+        .market-stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 28px 20px;
+            text-align: center;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .market-stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(0, 82, 204, 0.3);
+        }
+
+        .market-label {
+            font-size: 12px;
+            color: var(--color-text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .market-value {
+            font-size: 34px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-success), var(--color-success-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .market-description {
+            font-size: 13px;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Slide 5: Traction */
+        .traction-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 13px;
+            margin: 26px 0;
+        }
+
+        .traction-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 24px 16px;
+            text-align: center;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .traction-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(0, 82, 204, 0.3);
+        }
+
+        .traction-icon {
+            font-size: 29px;
+            margin-bottom: 12px;
+        }
+
+        .traction-value {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--color-success);
+            margin-bottom: 6px;
+        }
+
+        .traction-label {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            font-weight: 600;
+        }
+
+        .logo-showcase {
+            display: flex;
+            gap: 36px;
+            align-items: center;
+            justify-content: center;
+            margin-top: 28px;
+            padding: 28px;
+            background: rgba(0, 168, 107, 0.05);
+            border-radius: 12px;
+        }
+
+        .logo-item {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            opacity: 0.8;
+            transition: opacity var(--transition-base);
+        }
+
+        .logo-item:hover {
+            opacity: 1;
+        }
+
+        /* Slide 6: Business Model */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 13px;
+            margin-top: 26px;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 24px 20px;
+            text-align: center;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--color-primary);
+            box-shadow: 0 6px 18px rgba(0, 82, 204, 0.15);
+            transform: scale(1.02);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(0, 82, 204, 0.3);
+        }
+
+        .pricing-tier {
+            font-size: 13px;
+            color: var(--color-text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .pricing-value {
+            font-size: 29px;
+            font-weight: 800;
+            color: var(--color-primary);
+            margin-bottom: 4px;
+        }
+
+        .pricing-period {
+            font-size: 12px;
+            color: var(--color-text-tertiary);
+            margin-bottom: 6px;
+        }
+
+        .pricing-tokens {
+            font-size: 13px;
+            color: var(--color-success);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .pricing-features {
+            text-align: left;
+            margin-top: 16px;
+        }
+
+        .pricing-feature {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .pricing-feature:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-success);
+            font-weight: 700;
+        }
+
+        /* Slide 7: Unit Economics */
+        .economics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 32px 0;
+        }
+
+        .economics-card {
+            background: linear-gradient(135deg, rgba(0, 168, 107, 0.08), rgba(0, 168, 107, 0.03));
+            border: 2px solid var(--color-success-light);
+            border-radius: 12px;
+            padding: 28px 20px;
+            text-align: center;
+        }
+
+        .economics-label {
+            font-size: 12px;
+            color: var(--color-text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .economics-value {
+            font-size: 34px;
+            font-weight: 800;
+            color: var(--color-success);
+            margin-bottom: 10px;
+        }
+
+        .economics-description {
+            font-size: 13px;
+            color: var(--color-text-secondary);
+        }
+
+        /* Slide 8: Team */
+        .team-story {
+            background: rgba(0, 82, 204, 0.05);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 22px;
+        }
+
+        .team-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 19px;
+            text-align: center;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(0, 82, 204, 0.3);
+        }
+
+        .team-avatar {
+            width: 112px;
+            height: 112px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(0, 82, 204, 0.2);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, var(--color-primary), var(--color-ai-accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            font-weight: 800;
+            color: white;
+            margin: 0 auto 16px;
+            transition: all 0.3s ease;
+        }
+
+        .team-avatar:hover {
+            transform: scale(1.08);
+            box-shadow: 0 12px 32px rgba(0, 82, 204, 0.3);
+            border-color: rgba(0, 82, 204, 0.4);
+        }
+
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-name {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .team-title {
+            font-size: 13px;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+
+        .team-bio {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+            margin-bottom: 14px;
+            text-align: left;
+        }
+
+        .team-linkedin {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: #0077B5;
+            color: white;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .team-linkedin:hover {
+            background: #006399;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0, 119, 181, 0.3);
+        }
+
+        .team-linkedin:active {
+            transform: translateY(-1px);
+        }
+
+        /* Slide 9: Financial Projections */
+        .projections-highlight {
+            background: linear-gradient(135deg, rgba(0, 168, 107, 0.08), rgba(0, 168, 107, 0.03));
+            border: 2px solid var(--color-success-light);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            margin: 28px 0;
+        }
+
+        .projections-cta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .projections-link {
+            font-size: 15px;
+            color: var(--color-primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .projections-link:hover {
+            text-decoration: underline;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 28px;
+        }
+
+        /* Slide 10: The Ask */
+        .ask-card {
+            background: linear-gradient(135deg, rgba(0, 82, 204, 0.08), rgba(101, 84, 192, 0.08));
+            border: 3px solid var(--color-primary);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            margin: 28px 0;
+        }
+
+        .ask-amount {
+            font-size: 45px;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-ai-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+
+        .ask-type {
+            font-size: 15px;
+            color: var(--color-text-secondary);
+            margin-bottom: 32px;
+            font-weight: 600;
+        }
+
+        .use-of-funds {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 26px;
+            text-align: left;
+        }
+
+        .fund-item {
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: 10px;
+            padding: 14px;
+        }
+
+        .fund-percentage {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--color-primary);
+            margin-bottom: 6px;
+        }
+
+        .fund-category {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: 6px;
+        }
+
+        .fund-description {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Slide 11: Contact */
+        .contact-card {
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-icon {
+            font-size: 48px;
+            margin-bottom: 24px;
+        }
+
+        .contact-title {
+            font-size: 29px;
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+
+        .contact-description {
+            font-size: 16px;
+            color: var(--color-text-secondary);
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        .contact-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 24px;
+        }
+
+        /* ==================== RESPONSIVE DESIGN ==================== */
+        @media (max-width: 1680px) {
+            .hero-title { font-size: 38px; }
+            .slide-title { font-size: 29px; }
+            .problem-headline { font-size: 26px; }
+        }
+
+        @media (max-width: 1440px) {
+            .hero-title { font-size: 35px; }
+            .slide-title { font-size: 26px; }
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            .metric-value { font-size: 26px; }
+        }
+
+        @media (max-width: 1024px) {
+            .slide { padding: 100px 32px 32px; }
+            .hero-title { font-size: 30px; }
+            .slide-title { font-size: 22px; }
+            .problem-headline { font-size: 22px; }
+            .data-grid { grid-template-columns: 1fr; }
+            .capabilities-grid { grid-template-columns: 1fr; }
+            .market-stats { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+            .economics-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; }
+            .use-of-funds { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-header { padding: 0 16px; }
+            .nav-cta { display: none; }
+            .slide { padding: 100px 20px 32px; }
+            .hero-title { font-size: 26px; }
+            .hero-subtitle { font-size: 12px; }
+            .slide-title { font-size: 19px; }
+            .problem-headline { font-size: 19px; }
+            .metrics-grid { grid-template-columns: 1fr; gap: 12px; }
+            .traction-grid { grid-template-columns: repeat(2, 1fr); }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .nav-arrow { width: 36px; height: 36px; font-size: 16px; }
+            .nav-arrow-left { left: 8px; }
+            .nav-arrow-right { right: 8px; }
+        }
+
+        /* ==================== PRINT STYLES ==================== */
+        @media print {
+            .nav-header,
+            .nav-arrow,
+            .progress-dots,
+            .slide-counter {
+                display: none !important;
+            }
+
+            .slide {
+                page-break-after: always;
+                min-height: 100vh;
+            }
+
+            body {
+                overflow: visible;
+            }
+
+            .slide-container {
+                position: static;
+            }
+
+            .slides-wrapper {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Navigation Header -->
+    <nav class="nav-header">
+        <div class="nav-logo">
+            <img src="./public/assets/logo.png" alt="PM33 Logo" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 50%22%3E%3Ctext x=%2210%22 y=%2235%22 font-family=%22Inter,sans-serif%22 font-size=%2230%22 font-weight=%22900%22 fill=%22%230052CC%22%3EPM33%3C/text%3E%3C/svg%3E';">
+        </div>
+        <div class="nav-cta">
+            <button class="btn btn-primary" onclick="openEmailModal()">Get Investor Deck</button>
+        </div>
+    </nav>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">11</span>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <button class="nav-arrow nav-arrow-left" id="prev-btn" onclick="previousSlide()">
+        ‹
+    </button>
+    <button class="nav-arrow nav-arrow-right" id="next-btn" onclick="nextSlide()">
+        ›
+    </button>
+
+    <!-- Progress Dots -->
+    <div class="progress-dots" id="progress-dots"></div>
+
+    <!-- Slide Container -->
+    <div class="slide-container">
+        <div class="slides-wrapper" id="slides-wrapper">
+
+            <!-- Slide 1: Hero -->
+            <div class="slide" data-slide="1">
+                <div class="slide-content" style="text-align: center;">
+                    <div class="hero-badge">
+                        Creating the PM 3.0 Category
+                    </div>
+                    <h1 class="hero-title">
+                        Revenue Acceleration<br>Platform for Product Teams
+                    </h1>
+                    <p class="hero-subtitle">
+                        PM33 is the AI-native platform creating the Product Management 3.0 category.
+                        Like Agile replaced Waterfall, PM33 replaces manual product ops with intelligent automation.
+                    </p>
+                    <div class="hero-cta">
+                        <button class="btn btn-primary btn-lg" onclick="openEmailModal()">
+                            Get Investor Materials
+                        </button>
+                        <button class="btn btn-outline btn-lg" onclick="goToSlide(10)">
+                            View Investment Terms
+                        </button>
+                    </div>
+
+                    <!-- Key Metrics -->
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-value">5.6:1</div>
+                            <div class="metric-label">LTV:CAC Ratio</div>
+                            <div class="metric-sublabel">Industry benchmark: 3:1</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">68%</div>
+                            <div class="metric-label">Gross Margin</div>
+                            <div class="metric-sublabel">SaaS-scale economics</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">3.2mo</div>
+                            <div class="metric-label">CAC Payback</div>
+                            <div class="metric-sublabel">Target: <6 months</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">$100K</div>
+                            <div class="metric-label">MRR Target</div>
+                            <div class="metric-sublabel">Q1 2026</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Problem Statement -->
+            <div class="slide" data-slide="2">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-label">The Problem</span>
+                    </div>
+
+                    <h2 class="problem-headline">
+                        Every Week of Product Delay = $50,000 in Lost Revenue
+                    </h2>
+                    <p class="problem-subhead">
+                        Companies shipping weekly capture 3x more market opportunity than quarterly shippers
+                    </p>
+
+                    <div class="data-grid">
+                        <div class="data-card">
+                            <div class="data-stat">70%</div>
+                            <div class="data-label">More Market Opportunity</div>
+                            <div class="data-description">
+                                Companies shipping weekly capture 70% more market opportunity than monthly shippers.
+                                First-to-market features command 3x pricing premium vs. fast-followers.
+                            </div>
+                            <div class="data-source">Source: OpenView Venture Partners, "The State of Product-Led Growth 2024"</div>
+                        </div>
+
+                        <div class="data-card">
+                            <div class="data-stat">87%</div>
+                            <div class="data-label">Decision Paralysis</div>
+                            <div class="data-description">
+                                87% of product managers spend 3-8 hours per strategic decision;
+                                64% report frequent decision paralysis due to tool fragmentation.
+                            </div>
+                            <div class="data-source">Source: Product Management Institute, "PM Productivity Report 2024"</div>
+                        </div>
+
+                        <div class="data-card">
+                            <div class="data-stat">40%</div>
+                            <div class="data-label">Capacity Wasted</div>
+                            <div class="data-description">
+                                Average product team uses 12+ disconnected tools, spending 40% of time
+                                on alignment vs. customer value creation.
+                            </div>
+                            <div class="data-source">Source: Forrester Research, "The Fragmented Product Stack"</div>
+                        </div>
+
+                        <div class="data-card">
+                            <div class="data-stat">73%</div>
+                            <div class="data-label">Reactive Intelligence</div>
+                            <div class="data-description">
+                                73% of product teams learn about competitor features from customers,
+                                not proactive monitoring. Reactive posture = permanent second-mover disadvantage.
+                            </div>
+                            <div class="data-source">Source: SaaS Product Benchmark Survey, 2024</div>
+                        </div>
+
+                        <div class="data-card">
+                            <div class="data-stat">$480B</div>
+                            <div class="data-label">Annual Revenue Lost</div>
+                            <div class="data-description">
+                                $480 billion lost annually across SaaS industry from velocity gaps.
+                                12-week shipping cycles lose to 4-week competitors 92% of the time.
+                            </div>
+                            <div class="data-source">Source: Industry Analysis, 2024</div>
+                        </div>
+
+                        <div class="data-card">
+                            <div class="data-stat">3.2x</div>
+                            <div class="data-label">PLG Growth Advantage</div>
+                            <div class="data-description">
+                                Product-led companies shipping weekly have 3.2x higher revenue growth
+                                than quarterly shippers. PLG success = shipping velocity.
+                            </div>
+                            <div class="data-source">Source: ProductLed Alliance, "PLG Benchmarks 2024"</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Solution -->
+            <div class="slide" data-slide="3">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-label">The Solution</span>
+                        <h2 class="slide-title">AI-Powered Revenue Acceleration Platform</h2>
+                        <p class="slide-subtitle">
+                            PM33 enables product teams to ship revenue-driving features 3x faster through strategic intelligence,
+                            scenario planning, competitive analysis, and execution velocity.
+                        </p>
+                    </div>
+
+                    <div class="capabilities-grid">
+                        <div class="capability-card animate-slide-in animate-delay-1">
+                            <div class="capability-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="capability-title">Strategic AI Planning</div>
+                            <div class="capability-description">
+                                Uses strategic context from all company sources (docs, Slack, meetings, PRDs).
+                                AI-powered decision support based on company strategy.
+                                Aligns every feature with revenue objectives.
+                            </div>
+                        </div>
+
+                        <div class="capability-card animate-slide-in animate-delay-2">
+                            <div class="capability-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="capability-title">What-If Scenario Planning</div>
+                            <div class="capability-description">
+                                Model product roadmap scenarios before committing resources.
+                                Predict revenue impact of feature prioritization.
+                                Optimize resource allocation across initiatives.
+                            </div>
+                        </div>
+
+                        <div class="capability-card animate-slide-in animate-delay-3">
+                            <div class="capability-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2 12h20" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="capability-title">Competitive Intelligence & Analysis</div>
+                            <div class="capability-description">
+                                Automated competitor monitoring and feature tracking.
+                                Proactive alerts: "Competitor X launched Feature Y", "Series B raised".
+                                AI-generated battlecards and positioning recommendations.
+                            </div>
+                        </div>
+
+                        <div class="capability-card animate-slide-in animate-delay-4">
+                            <div class="capability-icon">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <div class="capability-title">Execution Velocity</div>
+                            <div class="capability-description">
+                                3x faster feature shipping with AI-assisted workflows.
+                                Automated PRD generation, story creation, task breakdown.
+                                Export to Jira, Linear, GitHub with one click.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Market Opportunity -->
+            <div class="slide" data-slide="4">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-label">Market Opportunity</span>
+                        <h2 class="slide-title">$84B Product Management Software Market</h2>
+                        <p class="slide-subtitle">
+                            We're creating a new category at the intersection of product management,
+                            revenue operations, and AI-native workflow automation.
+                        </p>
+                    </div>
+
+                    <div class="market-stats">
+                        <div class="market-stat-card">
+                            <div class="market-label">TAM (Total Addressable Market)</div>
+                            <div class="market-value">$84B</div>
+                            <div class="market-description">
+                                Global product management and collaboration software market by 2028,
+                                growing at 14% CAGR
+                            </div>
+                        </div>
+
+                        <div class="market-stat-card">
+                            <div class="market-label">SAM (Serviceable Addressable Market)</div>
+                            <div class="market-value">$22B</div>
+                            <div class="market-description">
+                                B2B SaaS companies with 50-5,000 employees using modern product management workflows
+                            </div>
+                        </div>
+
+                        <div class="market-stat-card">
+                            <div class="market-label">SOM (Serviceable Obtainable Market)</div>
+                            <div class="market-value">$2.1B</div>
+                            <div class="market-description">
+                                PLG-focused SaaS companies in North America seeking AI-native product intelligence (5-year target)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 32px; padding: 28px; background: rgba(0, 82, 204, 0.05); border-radius: 12px;">
+                        <h3 style="font-size: 19px; margin-bottom: 16px; text-align: center;">Why Now?</h3>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; font-size: 14px; color: var(--color-text-secondary);">
+                            <div>
+                                <strong style="color: var(--color-text-primary); display: block; margin-bottom: 6px;">AI Transformation</strong>
+                                87% of enterprises prioritize AI integration. Traditional PM tools can't be retrofitted with intelligence.
+                            </div>
+                            <div>
+                                <strong style="color: var(--color-text-primary); display: block; margin-bottom: 6px;">PLG Becoming Standard</strong>
+                                60% of B2B SaaS revenue now product-led (up from 30% in 2020). PLG demands continuous velocity.
+                            </div>
+                            <div>
+                                <strong style="color: var(--color-text-primary); display: block; margin-bottom: 6px;">Velocity as Moat</strong>
+                                Companies achieving $100M ARR now ship 3x faster than 2020 cohort. Speed creates compounding advantage.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 5: Traction -->
+            <div class="slide" data-slide="5">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-label">Traction & Validation</span>
+                        <h2 class="slide-title">Early Momentum & Market Validation</h2>
+                        <p class="slide-subtitle">
+                            PM33 has validated product-market fit with early beta customers from Fortune 500 companies.
+                            Our 100+ company waitlist demonstrates strong demand for AI-native product intelligence.
+                        </p>
+                    </div>
+
+                    <div class="traction-grid">
+                        <div class="traction-card">
+                            <div class="traction-icon">🚀</div>
+                            <div class="traction-value">Oct 2024</div>
+                            <div class="traction-label">Beta Launch</div>
+                        </div>
+
+                        <div class="traction-card">
+                            <div class="traction-icon">🏢</div>
+                            <div class="traction-value">100+</div>
+                            <div class="traction-label">Waitlist Companies</div>
+                        </div>
+
+                        <div class="traction-card">
+                            <div class="traction-icon">⭐</div>
+                            <div class="traction-value">Enterprise</div>
+                            <div class="traction-label">Beta Customers</div>
+                        </div>
+
+                        <div class="traction-card">
+                            <div class="traction-icon">🎯</div>
+                            <div class="traction-value">Fortune 500</div>
+                            <div class="traction-label">Early Adopters</div>
+                        </div>
+                    </div>
+
+                    <div class="logo-showcase">
+                        <div class="logo-item">LG Electronics</div>
+                        <div class="logo-item">Accenture</div>
+                        <div class="logo-item">+ 100 More</div>
+                    </div>
+
+                    <div style="margin-top: 26px; padding: 22px; background: rgba(0, 168, 107, 0.08); border-radius: 12px; text-align: center;">
+                        <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--color-success);">
+                            Strong Product-Market Fit Signals
+                        </h3>
+                        <p style="font-size: 12px; color: var(--color-text-secondary); max-width: 700px; margin: 0 auto;">
+                            Fortune 500 beta customers, 100+ waitlist companies, and consistent feedback that
+                            PM33 solves a critical pain point that existing tools don't address.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 6: Business Model -->
+            <div class="slide" data-slide="6">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-label">Business Model</span>
+                        <h2 class="slide-title">Token-Based SaaS Pricing</h2>
+                        <p class="slide-subtitle">
+                            Four-tier pricing model with included tokens. Each token = 1 AI operation worth $75 in consultant time.
+                            Clear value proposition at every tier.
+                        </p>
+                    </div>
+
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <div class="pricing-tier">Starter</div>
+                            <div class="pricing-value">$29</div>
+                            <div class="pricing-period">per seat/month</div>
+                            <div class="pricing-tokens">500 tokens included</div>
+                            <div class="pricing-features">
+                                <div class="pricing-feature">Individual PM velocity</div>
+                                <div class="pricing-feature">Basic roadmapping</div>
+                                <div class="pricing-feature">AI-powered insights</div>
+                                <div class="pricing-feature">Community support</div>
+                            </div>
+                        </div>
+
+                        <div class="pricing-card featured">
+                            <div class="pricing-tier">Team</div>
+                            <div class="pricing-value">$99</div>
+                            <div class="pricing-period">per seat/month</div>
+                            <div class="pricing-tokens">2,000 tokens included</div>
+                            <div class="pricing-features">
+                                <div class="pricing-feature">Team acceleration</div>
+                                <div class="pricing-feature">Advanced automation</div>
+                                <div class="pricing-feature">Revenue attribution</div>
+                                <div class="pricing-feature">Integrations (Jira, Slack)</div>
+                                <div class="pricing-feature">Priority support</div>
+                            </div>
+                        </div>
+
+                        <div class="pricing-card">
+                            <div class="pricing-tier">Scale</div>
+                            <div class="pricing-value">$199</div>
+                            <div class="pricing-period">per seat/month</div>
+                            <div class="pricing-tokens">5,000 tokens included</div>
+                            <div class="pricing-features">
+                                <div class="pricing-feature">Org transformation</div>
+                                <div class="pricing-feature">Portfolio optimization</div>
+                                <div class="pricing-feature">Competitive intelligence</div>
+                                <div class="pricing-feature">Advanced analytics</div>
+                                <div class="pricing-feature">Custom integrations</div>
+                            </div>
+                        </div>
+
+                        <div class="pricing-card">
+                            <div class="pricing-tier">Enterprise</div>
+                            <div class="pricing-value">$399</div>
+                            <div class="pricing-period">per seat/month</div>
+                            <div class="pricing-tokens">Unlimited tokens</div>
+                            <div class="pricing-features">
+                                <div class="pricing-feature">Market domination</div>
+                                <div class="pricing-feature">SSO & advanced security</div>
+                                <div class="pricing-feature">Dedicated success manager</div>
+                                <div class="pricing-feature">SLA guarantees</div>
+                                <div class="pricing-feature">Training & onboarding</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 32px; padding: 24px; background: rgba(101, 84, 192, 0.08); border-radius: 12px;">
+                        <h4 style="font-size: 16px; margin-bottom: 12px; text-align: center;">Token Value: 1 token = $75 in consultant value</h4>
+                        <p style="font-size: 14px; color: var(--color-text-secondary); text-align: center; line-height: 1.5;">
+                            Product-led growth with virality built in. Free tier drives adoption,
+                            natural upgrade path to higher tiers as teams grow and usage increases.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 7: Unit Economics -->
+            <div class="slide" data-slide="7">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-label">Unit Economics</span>
+                        <h2 class="slide-title">Best-in-Class SaaS Metrics</h2>
+                        <p class="slide-subtitle">
+                            PM33 demonstrates exceptional unit economics with 5.6:1 LTV:CAC ratio,
+                            68% gross margins, and 3.2-month payback period.
+                        </p>
+                    </div>
+
+                    <div class="economics-grid">
+                        <div class="economics-card">
+                            <div class="economics-label">LTV:CAC Ratio</div>
+                            <div class="economics-value">5.6:1</div>
+                            <div class="economics-description">
+                                Lifetime Value to Customer Acquisition Cost ratio.
+                                Industry benchmark: 3:1. Shows efficient customer acquisition.
+                            </div>
+                        </div>
+
+                        <div class="economics-card">
+                            <div class="economics-label">Gross Margin</div>
+                            <div class="economics-value">68%</div>
+                            <div class="economics-description">
+                                SaaS-scale economics with low infrastructure costs.
+                                Target: 75%+ at scale with volume pricing.
+                            </div>
+                        </div>
+
+                        <div class="economics-card">
+                            <div class="economics-label">CAC Payback</div>
+                            <div class="economics-value">3.2mo</div>
+                            <div class="economics-description">
+                                Time to recover customer acquisition costs.
+                                Target: <6 months. Enables rapid scaling.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 26px;">
+                        <h3 style="font-size: 18px; margin-bottom: 19px; text-align: center;">Key Assumptions</h3>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 13px;">
+                            <div style="background: white; border: 2px solid var(--color-border); border-radius: 10px; padding: 14px;">
+                                <strong style="font-size: 12px; color: var(--color-text-primary); display: block; margin-bottom: 8px;">
+                                    Customer Acquisition Cost (CAC)
+                                </strong>
+                                <div style="font-size: 12px; color: var(--color-text-secondary); line-height: 1.5;">
+                                    <div style="margin-bottom: 6px;">• Blended CAC: $890 (PLG + Sales-led)</div>
+                                    <div style="margin-bottom: 6px;">• PLG-only CAC: $420</div>
+                                    <div style="margin-bottom: 6px;">• Enterprise CAC: $2,400</div>
+                                    <div>• Declining over time with brand recognition</div>
+                                </div>
+                            </div>
+
+                            <div style="background: white; border: 2px solid var(--color-border); border-radius: 10px; padding: 14px;">
+                                <strong style="font-size: 12px; color: var(--color-text-primary); display: block; margin-bottom: 8px;">
+                                    Lifetime Value (LTV)
+                                </strong>
+                                <div style="font-size: 12px; color: var(--color-text-secondary); line-height: 1.5;">
+                                    <div style="margin-bottom: 6px;">• Average LTV: $4,984</div>
+                                    <div style="margin-bottom: 6px;">• Average ARPU: $89/month</div>
+                                    <div style="margin-bottom: 6px;">• 4.2% monthly churn</div>
+                                    <div>• Avg customer lifetime: ~24 months</div>
+                                </div>
+                            </div>
+
+                            <div style="background: white; border: 2px solid var(--color-border); border-radius: 10px; padding: 14px;">
+                                <strong style="font-size: 12px; color: var(--color-text-primary); display: block; margin-bottom: 8px;">
+                                    Revenue Mix
+                                </strong>
+                                <div style="font-size: 12px; color: var(--color-text-secondary); line-height: 1.5;">
+                                    <div style="margin-bottom: 6px;">• Team tier: 70% of revenue</div>
+                                    <div style="margin-bottom: 6px;">• Enterprise: 25% of revenue</div>
+                                    <div style="margin-bottom: 6px;">• Starter: 5% of revenue</div>
+                                    <div>• Annual uplifts: 8-12%</div>
+                                </div>
+                            </div>
+
+                            <div style="background: white; border: 2px solid var(--color-border); border-radius: 10px; padding: 14px;">
+                                <strong style="font-size: 12px; color: var(--color-text-primary); display: block; margin-bottom: 8px;">
+                                    Margin Structure
+                                </strong>
+                                <div style="font-size: 12px; color: var(--color-text-secondary); line-height: 1.5;">
+                                    <div style="margin-bottom: 6px;">• Gross margin: 68% (current)</div>
+                                    <div style="margin-bottom: 6px;">• Infrastructure costs: 22%</div>
+                                    <div style="margin-bottom: 6px;">• Support costs: 10%</div>
+                                    <div>• Target at scale: 75%+</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 8: Team -->
+            <div class="slide" data-slide="8">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-label">The Team</span>
+                        <h2 class="slide-title">Experienced Founders</h2>
+                        <p class="slide-subtitle">
+                            Serial entrepreneurs with successful exit, solving problems they lived through firsthand
+                        </p>
+                    </div>
+
+                    <div class="team-story">
+                        The PM33 founding team recently sold their Media Operations company to a major media client.
+                        Through that experience, they identified critical product management gaps that existing tools
+                        couldn't solve. PM33 is their AI-native solution to the velocity and strategic alignment
+                        challenges they lived through.
+                    </div>
+
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <div class="team-avatar">
+                                <img src="./public/assets/Saper.png" alt="Steven Saper" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="team-name">Steven Saper</div>
+                            <div class="team-title">CEO & Co-Founder</div>
+                            <div class="team-bio">
+                                Former strategy consultant for IBM and Accenture, helping Fortune 500 companies and startups develop strategies and build leading products. Founded and sold Audience Platform to a major media client. Now launching PM33 to address critical product management gaps discovered through years of consulting and entrepreneurship.
+                            </div>
+                            <a href="https://www.linkedin.com/in/ssaper/" target="_blank" class="team-linkedin">
+                                <span>in</span> View LinkedIn
+                            </a>
+                        </div>
+
+                        <div class="team-card">
+                            <div class="team-avatar">
+                                <img src="./public/assets/Alexandrov.png" alt="George Alexandrov" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="team-name">George Alexandrov</div>
+                            <div class="team-title">CRO & Co-Founder</div>
+                            <div class="team-bio">
+                                Former Regional Head of Sales and Managing Director at Oracle and IBM. Expert in enterprise sales strategy and revenue operations. Co-founded PM33 after experiencing product velocity challenges across multiple enterprise environments. Leads go-to-market strategy and revenue growth.
+                            </div>
+                            <a href="https://www.linkedin.com/in/george-alexandrov-8ba998/" target="_blank" class="team-linkedin">
+                                <span>in</span> View LinkedIn
+                            </a>
+                        </div>
+
+                        <div class="team-card">
+                            <div class="team-avatar">
+                                <img src="./public/assets/krivoshiev.png" alt="Petar Krivoshiev" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div class="team-name">Petar Krivoshiev</div>
+                            <div class="team-title">CTO & Co-Founder</div>
+                            <div class="team-bio">
+                                Head of Technology with 25+ years building enterprise products and AI solutions. Nuclear physicist turned software architect, recognized as one of Bulgaria's leading AI experts. Previously co-founded Codeberry Inc. and onstage.io. Leads PM33's technical architecture with focus on strategic AI and automation.
+                            </div>
+                            <a href="https://www.linkedin.com/in/krivoshiev/" target="_blank" class="team-linkedin">
+                                <span>in</span> View LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 9: Financial Projections -->
+            <div class="slide" data-slide="9">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-label">Financial Projections</span>
+                        <h2 class="slide-title">Path to $10M ARR by 2027</h2>
+                        <p class="slide-subtitle">
+                            Conservative growth model with clear milestones and capital-efficient scaling
+                        </p>
+                    </div>
+
+                    <div class="projections-highlight">
+                        <h3 style="font-size: 26px; margin-bottom: 18px;">Detailed Financial Model</h3>
+                        <div class="projections-cta">
+                            <a href="https://docs.google.com/spreadsheets/d/1xZGE9fH0KI9SyLgKRb_8cSJOoKGdkO8_"
+                               target="_blank"
+                               class="projections-link">
+                                View Full Financial Projections (Google Sheets) →
+                            </a>
+                            <p style="font-size: 14px; color: var(--color-text-secondary); max-width: 650px; margin: 0 auto;">
+                                Comprehensive 5-year model with detailed assumptions for customer acquisition,
+                                revenue growth, operational expenses, and cash flow projections.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h3 style="font-size: 18px; margin: 26px 0 14px; text-align: center;">Key Milestones</h3>
+                    <div class="highlights-grid">
+                        <div class="traction-card">
+                            <div class="traction-value">Q1 2026</div>
+                            <div class="traction-label">$100K MRR</div>
+                        </div>
+
+                        <div class="traction-card">
+                            <div class="traction-value">Q4 2026</div>
+                            <div class="traction-label">$500K MRR</div>
+                        </div>
+
+                        <div class="traction-card">
+                            <div class="traction-value">2027</div>
+                            <div class="traction-label">$10M ARR</div>
+                        </div>
+
+                        <div class="traction-card">
+                            <div class="traction-value">2028</div>
+                            <div class="traction-label">$30M ARR</div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 26px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px;">
+                        <div style="background: white; border: 2px solid var(--color-border); border-radius: 10px; padding: 14px; text-align: center;">
+                            <div style="font-size: 10px; color: var(--color-text-tertiary); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">
+                                Runway Extension
+                            </div>
+                            <div style="font-size: 21px; font-weight: 800; color: var(--color-primary); margin-bottom: 5px;">
+                                18 months
+                            </div>
+                            <div style="font-size: 12px; color: var(--color-text-secondary);">
+                                With $1.5M seed funding
+                            </div>
+                        </div>
+
+                        <div style="background: white; border: 2px solid var(--color-border); border-radius: 10px; padding: 14px; text-align: center;">
+                            <div style="font-size: 10px; color: var(--color-text-tertiary); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">
+                                Cash Flow Positive
+                            </div>
+                            <div style="font-size: 21px; font-weight: 800; color: var(--color-success); margin-bottom: 5px;">
+                                Q3 2026
+                            </div>
+                            <div style="font-size: 12px; color: var(--color-text-secondary);">
+                                Target profitability
+                            </div>
+                        </div>
+
+                        <div style="background: white; border: 2px solid var(--color-border); border-radius: 10px; padding: 14px; text-align: center;">
+                            <div style="font-size: 10px; color: var(--color-text-tertiary); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;">
+                                Series A Ready
+                            </div>
+                            <div style="font-size: 21px; font-weight: 800; color: var(--color-ai-accent); margin-bottom: 5px;">
+                                Q4 2026
+                            </div>
+                            <div style="font-size: 12px; color: var(--color-text-secondary);">
+                                $500K+ MRR milestone
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 10: The Ask -->
+            <div class="slide" data-slide="10">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-label">Investment Opportunity</span>
+                        <h2 class="slide-title">The Ask</h2>
+                    </div>
+
+                    <div class="ask-card">
+                        <div class="ask-amount">$1.5M</div>
+                        <div class="ask-type">Seed Round</div>
+                        <p style="font-size: 15px; color: var(--color-text-secondary); max-width: 550px; margin: 0 auto 24px;">
+                            SAFE note at $10M post-money valuation cap with 20% discount.
+                            Leading investor gets pro-rata rights in Series A.
+                        </p>
+                    </div>
+
+                    <h3 style="font-size: 18px; margin: 26px 0 14px; text-align: center;">Use of Funds</h3>
+                    <div class="use-of-funds">
+                        <div class="fund-item">
+                            <div class="fund-percentage">45%</div>
+                            <div class="fund-category">Product Development</div>
+                            <div class="fund-description">
+                                2 additional engineers, AI/ML infrastructure, core platform features,
+                                integrations with Jira/Linear/Slack, and enterprise security features.
+                            </div>
+                        </div>
+
+                        <div class="fund-item">
+                            <div class="fund-percentage">30%</div>
+                            <div class="fund-category">Go-to-Market</div>
+                            <div class="fund-description">
+                                Sales & marketing hiring, PLG funnel optimization, content marketing,
+                                demand generation, and early customer success infrastructure.
+                            </div>
+                        </div>
+
+                        <div class="fund-item">
+                            <div class="fund-percentage">15%</div>
+                            <div class="fund-category">Operations & Infrastructure</div>
+                            <div class="fund-description">
+                                Cloud infrastructure scaling, security & compliance (SOC 2),
+                                legal & accounting, and general operational expenses.
+                            </div>
+                        </div>
+
+                        <div class="fund-item">
+                            <div class="fund-percentage">10%</div>
+                            <div class="fund-category">Reserve & Contingency</div>
+                            <div class="fund-description">
+                                Working capital buffer, unforeseen opportunities, and runway extension
+                                to ensure 18+ months of operational flexibility.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 32px; padding: 24px; background: rgba(101, 84, 192, 0.08); border-radius: 12px; text-align: center;">
+                        <h4 style="font-size: 16px; margin-bottom: 10px;">Investment Highlights</h4>
+                        <p style="font-size: 14px; color: var(--color-text-secondary); line-height: 1.5;">
+                            Category creation opportunity • Fortune 500 validation • Best-in-class unit economics •
+                            Experienced founding team • Clear path to Series A
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 11: Contact & Next Steps -->
+            <div class="slide" data-slide="11">
+                <div class="slide-content">
+                    <div class="contact-card">
+                        <div class="contact-icon">🚀</div>
+                        <h2 class="contact-title">Let's Build PM 3.0 Together</h2>
+                        <p class="contact-description">
+                            We're raising $1.5M to accelerate product development and go-to-market.
+                            Join us in creating the future of AI-native product management.
+                        </p>
+
+                        <div class="contact-actions">
+                            <button class="btn btn-primary btn-lg" onclick="openEmailModal()">
+                                Request Investor Materials
+                            </button>
+                            <a href="mailto:investor@pm-33.com" class="btn btn-outline btn-lg">
+                                investor@pm-33.com
+                            </a>
+                        </div>
+
+                        <div style="margin-top: 32px; padding-top: 24px; border-top: 2px solid var(--color-border);">
+                            <h3 style="font-size: 16px; margin-bottom: 16px;">Next Steps</h3>
+                            <div style="text-align: left; max-width: 550px; margin: 0 auto;">
+                                <div style="margin-bottom: 12px; font-size: 14px; color: var(--color-text-secondary);">
+                                    <strong style="color: var(--color-primary);">1.</strong> Complete investor intake form
+                                </div>
+                                <div style="margin-bottom: 12px; font-size: 14px; color: var(--color-text-secondary);">
+                                    <strong style="color: var(--color-primary);">2.</strong> Receive full pitch deck and financial model
+                                </div>
+                                <div style="margin-bottom: 12px; font-size: 14px; color: var(--color-text-secondary);">
+                                    <strong style="color: var(--color-primary);">3.</strong> Schedule deep-dive call with founders
+                                </div>
+                                <div style="margin-bottom: 12px; font-size: 14px; color: var(--color-text-secondary);">
+                                    <strong style="color: var(--color-primary);">4.</strong> Product demo and customer reference calls
+                                </div>
+                                <div style="font-size: 14px; color: var(--color-text-secondary);">
+                                    <strong style="color: var(--color-primary);">5.</strong> Due diligence and term sheet
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 28px; padding: 18px; background: rgba(0, 82, 204, 0.05); border-radius: 10px;">
+                            <p style="font-size: 12px; color: var(--color-text-tertiary); margin: 0;">
+                                PM33 Inc. • Miami, FL • investor@pm-33.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Email Capture Modal -->
+    <div class="modal-overlay" id="email-modal" onclick="closeModalOnOverlay(event)">
+        <div class="modal" style="position: relative;">
+            <button class="modal-close" onclick="closeEmailModal()">&times;</button>
+
+            <div id="modal-form">
+                <h2>Get Investor Materials</h2>
+                <p>Access the full pitch deck, financial model, and data room</p>
+
+                <form id="investor-form" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="firm">Company Name</label>
+                        <input type="text" id="firm" name="firm" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title">Role/Title</label>
+                        <input type="text" id="title" name="title" placeholder="Optional">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="interest">Investor Type</label>
+                        <select id="interest" name="interest">
+                            <option value="">Select...</option>
+                            <option value="Angel Investor">Angel Investor</option>
+                            <option value="Venture Capital">Venture Capital</option>
+                            <option value="Private Equity">Private Equity</option>
+                            <option value="Family Office">Family Office</option>
+                            <option value="Strategic Investor">Strategic Investor</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 20px;">
+                        <label style="display: flex; align-items: flex-start; gap: 10px; font-weight: 400; cursor: pointer;">
+                            <input type="checkbox" id="accredited" name="accredited" required style="margin-top: 3px; width: 18px; height: 18px; cursor: pointer;">
+                            <span style="font-size: 13px; line-height: 1.4;">I confirm that I am an accredited investor as defined by SEC regulations, or I am reviewing this on behalf of an accredited investor or institutional fund.</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Submit Request
+                    </button>
+                </form>
+            </div>
+
+            <div id="modal-success" class="success-message">
+                <h3>✓ Thank You!</h3>
+                <p>Your request has been received.</p>
+                <p style="font-size: 14px;">
+                    We'll send the investor materials to your email within 24 hours
+                    and follow up to schedule a call with our founding team.
+                </p>
+                <button class="btn btn-primary" onclick="closeEmailModal()">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ==================== SLIDE NAVIGATION ====================
+        let currentSlide = 0;
+        const totalSlides = 11;
+
+        function updateSlidePosition() {
+            const wrapper = document.getElementById('slides-wrapper');
+            wrapper.style.transform = `translateX(-${currentSlide * 100}vw)`;
+
+            // Update counter
+            document.getElementById('current-slide').textContent = currentSlide + 1;
+
+            // Update dots
+            updateProgressDots();
+
+            // Update arrow states
+            updateArrowStates();
+
+            // Update URL hash
+            window.location.hash = `slide-${currentSlide + 1}`;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlidePosition();
+
+                // Show email modal after slide 5 (index 4) is viewed
+                if (currentSlide === 5 && !localStorage.getItem('emailModalShown')) {
+                    setTimeout(() => {
+                        openEmailModal();
+                        localStorage.setItem('emailModalShown', 'true');
+                    }, 500);
+                }
+            }
+        }
+
+        function previousSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlidePosition();
+            }
+        }
+
+        function goToSlide(index) {
+            if (index >= 0 && index < totalSlides) {
+                currentSlide = index;
+                updateSlidePosition();
+            }
+        }
+
+        function updateArrowStates() {
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+
+            if (currentSlide === 0) {
+                prevBtn.classList.add('disabled');
+            } else {
+                prevBtn.classList.remove('disabled');
+            }
+
+            if (currentSlide === totalSlides - 1) {
+                nextBtn.classList.add('disabled');
+            } else {
+                nextBtn.classList.remove('disabled');
+            }
+        }
+
+        // ==================== PROGRESS DOTS ====================
+        function createProgressDots() {
+            const container = document.getElementById('progress-dots');
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'progress-dot';
+                if (i === 0) dot.classList.add('active');
+                dot.onclick = () => goToSlide(i);
+                dot.title = `Slide ${i + 1}`;
+                container.appendChild(dot);
+            }
+        }
+
+        function updateProgressDots() {
+            const dots = document.querySelectorAll('.progress-dot');
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        // ==================== KEYBOARD NAVIGATION ====================
+        document.addEventListener('keydown', (e) => {
+            // Don't navigate if modal is open or user is typing in form
+            if (document.getElementById('email-modal').classList.contains('active')) {
+                return;
+            }
+
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                previousSlide();
+            } else if (e.key === 'Home') {
+                e.preventDefault();
+                goToSlide(0);
+            } else if (e.key === 'End') {
+                e.preventDefault();
+                goToSlide(totalSlides - 1);
+            }
+        });
+
+        // ==================== TOUCH/SWIPE SUPPORT ====================
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    // Swipe left - next slide
+                    nextSlide();
+                } else {
+                    // Swipe right - previous slide
+                    previousSlide();
+                }
+            }
+        }
+
+        // ==================== EMAIL MODAL ====================
+        function openEmailModal() {
+            document.getElementById('email-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeEmailModal() {
+            document.getElementById('email-modal').classList.remove('active');
+            document.body.style.overflow = '';
+
+            // Reset form
+            document.getElementById('investor-form').reset();
+            document.getElementById('modal-form').style.display = 'block';
+            document.getElementById('modal-success').classList.remove('active');
+        }
+
+        function closeModalOnOverlay(event) {
+            if (event.target === document.getElementById('email-modal')) {
+                closeEmailModal();
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                firm: document.getElementById('firm').value || '',
+                title: document.getElementById('title').value || '',
+                interest: document.getElementById('interest').value || ''
+            };
+
+            // Log to console for debugging
+            console.log('INVESTOR LEAD:', formData);
+
+            // Create a hidden iframe for form submission
+            let iframe = document.getElementById('hidden-iframe');
+            if (!iframe) {
+                iframe = document.createElement('iframe');
+                iframe.id = 'hidden-iframe';
+                iframe.name = 'hidden-iframe';
+                iframe.style.display = 'none';
+                document.body.appendChild(iframe);
+            }
+
+            // Create a temporary form for Google Forms submission
+            const tempForm = document.createElement('form');
+            tempForm.action = 'https://docs.google.com/forms/d/e/1FAIpQLSfHIphxwIt5dmeEB2u7jJoPraLjgy8R9DUfc4wkBx_Y9pn9Mg/formResponse';
+            tempForm.method = 'POST';
+            tempForm.target = 'hidden-iframe';
+
+            // Add form fields with correct entry IDs (from actual form inspection)
+            const fields = {
+                'entry.1729343251': formData.name,      // Full Name
+                'emailAddress': formData.email,          // Email Address (special field)
+                'entry.1150422166': formData.firm,      // Company Name
+                'entry.806346756': formData.title       // Role/Title
+            };
+
+            // Add investor type as a note in company field if selected
+            if (formData.interest) {
+                fields['entry.1150422166'] = (formData.firm ? formData.firm + ' | ' : '') + 'Investor Type: ' + formData.interest;
+            }
+
+            Object.entries(fields).forEach(([name, value]) => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = name;
+                input.value = value || '';
+                tempForm.appendChild(input);
+            });
+
+            // Append form to body and submit
+            document.body.appendChild(tempForm);
+
+            console.log('Submitting form to Google Forms...');
+            console.log('Form action:', tempForm.action);
+            console.log('Form data:', fields);
+
+            try {
+                tempForm.submit();
+                console.log('✓ Form submitted successfully');
+
+                // Show success message immediately
+                document.getElementById('modal-form').style.display = 'none';
+                document.getElementById('modal-success').classList.add('active');
+            } catch (error) {
+                console.error('✗ Form submission error:', error);
+                alert('There was an error submitting the form. Please try again.');
+            }
+
+            // Remove temporary form after a short delay
+            setTimeout(() => {
+                if (document.body.contains(tempForm)) {
+                    document.body.removeChild(tempForm);
+                }
+            }, 2000);
+        }
+
+        // ==================== INITIALIZATION ====================
+        document.addEventListener('DOMContentLoaded', () => {
+            createProgressDots();
+            updateArrowStates();
+
+            // Check for hash in URL
+            const hash = window.location.hash;
+            if (hash && hash.startsWith('#slide-')) {
+                const slideNum = parseInt(hash.replace('#slide-', '')) - 1;
+                if (slideNum >= 0 && slideNum < totalSlides) {
+                    currentSlide = slideNum;
+                    updateSlidePosition();
+                }
+            }
+
+            // Trigger animations on slide 3
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const animatedElements = entry.target.querySelectorAll('.animate-slide-in');
+                        animatedElements.forEach(el => {
+                            el.style.opacity = '0';
+                            setTimeout(() => {
+                                el.style.animation = 'slideInLeft 0.6s ease-out forwards';
+                            }, 100);
+                        });
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.querySelectorAll('.slide').forEach(slide => {
+                observer.observe(slide);
+            });
+        });
+
+        // ==================== PREVENT UNWANTED SCROLLING ====================
+        document.body.addEventListener('wheel', (e) => {
+            // Allow scrolling within slides if needed
+            const slide = document.querySelector('.slide');
+            if (slide.scrollHeight > slide.clientHeight) {
+                return; // Allow scroll
+            }
+            e.preventDefault();
+        }, { passive: false });
+    </script>
+</body>
+</html>
