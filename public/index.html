@@ -118,6 +118,29 @@
             -webkit-overflow-scrolling: touch;
         }
 
+        /* Force scrollbars to always be visible */
+        .slide::-webkit-scrollbar {
+            -webkit-appearance: none;
+            width: 12px;
+        }
+
+        .slide::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .slide::-webkit-scrollbar-thumb {
+            background: rgba(0, 82, 204, 0.5);
+            border-radius: 10px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+
+        .slide::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 82, 204, 0.8);
+            background-clip: content-box;
+        }
+
         .slide-content {
             max-width: 1300px;
             width: 100%;
