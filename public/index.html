@@ -110,9 +110,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 100px 32px 32px;
+            padding: 120px 32px 32px;
             position: relative;
             overflow-y: auto;
+            scroll-padding-top: 80px;
         }
 
         .slide-content {
@@ -1269,7 +1270,7 @@
         }
 
         @media (max-width: 1024px) {
-            .slide { padding: 100px 32px 32px; }
+            .slide { padding: 120px 32px 32px; }
             .hero-title { font-size: 30px; }
             .slide-title { font-size: 22px; }
             .problem-headline { font-size: 22px; }
@@ -1283,9 +1284,20 @@
         }
 
         @media (max-width: 768px) {
-            .nav-header { padding: 0 16px; }
+            .nav-header {
+                padding: 0 16px;
+                height: 56px;
+            }
+            .nav-logo img {
+                height: 24px;
+            }
             .nav-cta { display: none; }
-            .slide { padding: 100px 20px 32px; }
+            .slide { padding: 120px 20px 32px; }
+            .slide-counter {
+                top: 64px;
+                right: 16px;
+                font-size: 11px;
+            }
             .hero-title { font-size: 26px; }
             .hero-subtitle { font-size: 12px; }
             .slide-title { font-size: 19px; }
@@ -1296,6 +1308,36 @@
             .nav-arrow { width: 36px; height: 36px; font-size: 16px; }
             .nav-arrow-left { left: 8px; }
             .nav-arrow-right { right: 8px; }
+        }
+
+        @media (max-width: 480px) {
+            .nav-header {
+                padding: 0 12px;
+                height: 52px;
+            }
+            .nav-logo img {
+                height: 22px;
+            }
+            .slide { padding: 110px 16px 32px; }
+            .slide-counter {
+                top: 60px;
+                right: 12px;
+                font-size: 10px;
+            }
+            .slide-title { font-size: 17px; }
+            .hero-title { font-size: 22px; }
+            .progress-dots {
+                bottom: 16px;
+                padding: 8px 16px;
+                gap: 8px;
+            }
+            .progress-dot {
+                width: 6px;
+                height: 6px;
+            }
+            .progress-dot.active {
+                width: 18px;
+            }
         }
 
         /* ==================== PRINT STYLES ==================== */
