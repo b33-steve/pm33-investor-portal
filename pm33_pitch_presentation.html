@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM33 - Seed Investor Deck</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+            overflow: hidden;
+            background: #0a0e27;
+            color: #ffffff;
+        }
+
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.5s, transform 0.5s;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 4rem;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: scale(1);
+            z-index: 10;
+        }
+
+        /* Navigation */
+        .nav-controls {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            display: flex;
+            gap: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .nav-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .slide-indicator {
+            color: white;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Top Controls */
+        .top-controls {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .control-btn {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Slide Backgrounds */
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .dark-bg {
+            background: #0a0e27;
+        }
+
+        .light-bg {
+            background: #fafaf9;
+            color: #0f172a;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s;
+        }
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s 0.2s backwards;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #a855f7;
+        }
+
+        p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .subtitle {
+            font-size: 1.75rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s 0.4s backwards;
+        }
+
+        /* Content Grid */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+            animation: fadeInUp 0.8s 0.4s backwards;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .metric-card {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 1rem;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Problem List */
+        .problem-list {
+            list-style: none;
+            text-align: left;
+            max-width: 800px;
+        }
+
+        .problem-list li {
+            background: rgba(251, 113, 133, 0.1);
+            border-left: 4px solid #fb7185;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            font-size: 1.25rem;
+            animation: slideInLeft 0.5s backwards;
+        }
+
+        .problem-list li:nth-child(1) { animation-delay: 0.2s; }
+        .problem-list li:nth-child(2) { animation-delay: 0.3s; }
+        .problem-list li:nth-child(3) { animation-delay: 0.4s; }
+        .problem-list li:nth-child(4) { animation-delay: 0.5s; }
+        .problem-list li:nth-child(5) { animation-delay: 0.6s; }
+
+        /* Solution Features */
+        .feature-list {
+            list-style: none;
+            text-align: left;
+            max-width: 900px;
+        }
+
+        .feature-list li {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid #10b981;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            font-size: 1.25rem;
+            animation: slideInRight 0.5s backwards;
+        }
+
+        .feature-list li:nth-child(1) { animation-delay: 0.2s; }
+        .feature-list li:nth-child(2) { animation-delay: 0.3s; }
+        .feature-list li:nth-child(3) { animation-delay: 0.4s; }
+
+        /* Pricing Table */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 1400px;
+            animation: fadeInUp 0.8s 0.4s backwards;
+        }
+
+        .pricing-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            transform: scale(1.05);
+            border-color: #7c3aed;
+            box-shadow: 0 20px 60px rgba(124, 58, 237, 0.4);
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 1rem 0;
+        }
+
+        /* Timeline */
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1400px;
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            z-index: -1;
+        }
+
+        .timeline-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            flex: 1;
+            margin: 0 0.5rem;
+            animation: bounceIn 0.6s backwards;
+        }
+
+        .timeline-item:nth-child(1) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.6s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.8s; }
+
+        .timeline-month {
+            font-size: 0.9rem;
+            color: #a855f7;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .timeline-mrr {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #10b981;
+            margin: 0.5rem 0;
+        }
+
+        /* Competition Grid */
+        .competition-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 2rem;
+        }
+
+        .competitor-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .competitor-card.pm33 {
+            border-color: #7c3aed;
+            background: rgba(124, 58, 237, 0.2);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Logo Animation */
+        .logo {
+            width: 200px;
+            height: 60px;
+            margin-bottom: 2rem;
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: rgba(124, 58, 237, 0.2);
+            border: 2px solid #7c3aed;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            color: white;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            z-index: 2000;
+            transition: width 0.3s;
+        }
+
+        /* Fullscreen Mode */
+        .fullscreen-active .nav-controls,
+        .fullscreen-active .top-controls {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .fullscreen-active:hover .nav-controls,
+        .fullscreen-active:hover .top-controls {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .slide {
+                page-break-after: always;
+                position: relative;
+                opacity: 1 !important;
+                transform: none !important;
+                height: 100vh;
+            }
+            
+            .nav-controls,
+            .top-controls,
+            .progress-bar {
+                display: none !important;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; }
+            .competition-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="top-controls">
+        <button class="control-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+        <button class="control-btn" onclick="window.print()">🖨️ Export PDF</button>
+    </div>
+
+    <div class="presentation-container" id="presentation">
+        
+        <!-- Slide 1: Title -->
+        <div class="slide active gradient-bg">
+            <svg class="logo" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#1E40AF" />
+                        <stop offset="20%" style="stop-color:#2563EB" />
+                        <stop offset="40%" style="stop-color:#0891B2" />
+                        <stop offset="60%" style="stop-color:#4F46E5" />
+                        <stop offset="80%" style="stop-color:#7C3AED" />
+                        <stop offset="100%" style="stop-color:#A855F7" />
+                    </linearGradient>
+                </defs>
+                <text x="50%" y="60" font-size="72" font-weight="900" fill="url(#logoGrad)" text-anchor="middle">PM33</text>
+            </svg>
+            <h1>The Revenue Acceleration Platform</h1>
+            <p class="subtitle">Ship Revenue-Driving Features 3x Faster with Strategic Intelligence</p>
+            <div class="highlight-box">
+                <h3>Path to $100K MRR by March 2026</h3>
+                <p>Beta Live • Early Traction • AI-Native</p>
+            </div>
+        </div>
+
+        <!-- Slide 2: The Problem -->
+        <div class="slide dark-bg">
+            <h2>Product Velocity Determines Market Value</h2>
+            <p class="subtitle">Companies that ship weekly capture 70% more market opportunity</p>
+            <div class="highlight-box">
+                <h1>$50K/Month</h1>
+                <p>Lost revenue from slow shipping</p>
+            </div>
+            <ul class="problem-list">
+                <li><strong>Strategic Chaos:</strong> 87% of PMs struggle with decisions (3-8 hours each)</li>
+                <li><strong>Tool Fragmentation:</strong> 12+ disconnected tools, 40% time on alignment</li>
+                <li><strong>Manual Everything:</strong> No AI-powered decision support</li>
+                <li><strong>Reactive Posture:</strong> Learning about competitors from customers</li>
+                <li><strong>Lost Velocity:</strong> Features take 12 weeks vs competitors' 4 weeks</li>
+            </ul>
+        </div>
+
+        <!-- Slide 3: The Solution -->
+        <div class="slide dark-bg">
+            <h2>PM33: Revenue Acceleration Through Intelligence</h2>
+            <p class="subtitle">AI-powered Product Intelligence Platform</p>
+            <div class="content-grid">
+                <div class="card">
+                    <h3>🎯 Strategic Intelligence</h3>
+                    <p>Know what to build before competitors</p>
+                    <ul style="text-align: left; margin-top: 1rem; line-height: 1.8;">
+                        <li>AI extracts strategy from docs</li>
+                        <li>Predicts revenue impact</li>
+                        <li>10-min analysis vs 8 hours</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>⚡ Velocity Advantage</h3>
+                    <p>Ship 3x faster than competitors</p>
+                    <ul style="text-align: left; margin-top: 1rem; line-height: 1.8;">
+                        <li>Automated backlog management</li>
+                        <li>Real-time priority balancing</li>
+                        <li>70% cycle time reduction</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>💰 Customer Focus</h3>
+                    <p>Build what drives revenue</p>
+                    <ul style="text-align: left; margin-top: 1rem; line-height: 1.8;">
+                        <li>Revenue impact predictions</li>
+                        <li>Customer intelligence integration</li>
+                        <li>ROI tracking on every decision</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Why Now -->
+        <div class="slide dark-bg">
+            <h2>Why Now?</h2>
+            <p class="subtitle">The Perfect Storm for Revenue Intelligence</p>
+            <div class="content-grid">
+                <div class="card">
+                    <h3>🤖 AI Disruption</h3>
+                    <p>Every company integrating AI or losing market share</p>
+                </div>
+                <div class="card">
+                    <h3>⚡ Velocity is the Moat</h3>
+                    <p>Winners ship weekly, losers ship monthly</p>
+                </div>
+                <div class="card">
+                    <h3>🔧 Tool Fatigue</h3>
+                    <p>PMs drowning in 12+ disconnected tools</p>
+                </div>
+                <div class="card">
+                    <h3>💵 Budget Available</h3>
+                    <p>Heavy investment in AI transformation</p>
+                </div>
+                <div class="card">
+                    <h3>📊 PM Role Evolving</h3>
+                    <p>From ticket managers to revenue partners</p>
+                </div>
+                <div class="card">
+                    <h3>🎯 $29 Entry Point</h3>
+                    <p>Zero friction adoption vs 6-month implementations</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Market Opportunity -->
+        <div class="slide dark-bg">
+            <h2>Massive Market, Perfect Entry</h2>
+            <div class="content-grid" style="max-width: 1000px;">
+                <div class="metric-card">
+                    <div class="metric-value">$30B</div>
+                    <div class="metric-label">TAM</div>
+                    <p style="margin-top: 1rem;">Global PM software market</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$3.5B</div>
+                    <div class="metric-label">SAM</div>
+                    <p style="margin-top: 1rem;">AI-enhanced PM tools<br/>Growing 13% CAGR</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$120M</div>
+                    <div class="metric-label">SOM</div>
+                    <p style="margin-top: 1rem;">5,000 teams ready for<br/>revenue intelligence</p>
+                </div>
+            </div>
+            <div class="highlight-box" style="margin-top: 3rem;">
+                <h3>Our Position</h3>
+                <p style="font-size: 1.5rem; margin-top: 1rem;">
+                    Year 1: $1.2M ARR (0.03% SAM) → Year 2: $5M ARR (0.14% SAM)
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 6: Business Model -->
+        <div class="slide dark-bg">
+            <h2>Intelligence Operations Pricing</h2>
+            <p class="subtitle">Per-Seat + Token Model • High Margin, High Value</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">$29</div>
+                    <p>500 tokens/mo</p>
+                    <p style="margin-top: 1rem; opacity: 0.7;">$37,500 value delivered</p>
+                    <p style="margin-top: 1rem;">Solo PMs</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>Team</h3>
+                    <div class="price">$99</div>
+                    <p>2,000 tokens/mo</p>
+                    <p style="margin-top: 1rem; opacity: 0.7;">$150,000 value delivered</p>
+                    <p style="margin-top: 1rem;">3-10 PMs</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>Scale</h3>
+                    <div class="price">$199</div>
+                    <p>5,000 tokens/mo</p>
+                    <p style="margin-top: 1rem; opacity: 0.7;">$375,000 value delivered</p>
+                    <p style="margin-top: 1rem;">10-50 PMs</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">$399</div>
+                    <p>Unlimited tokens</p>
+                    <p style="margin-top: 1rem; opacity: 0.7;">$1M+ value delivered</p>
+                    <p style="margin-top: 1rem;">50+ PMs</p>
+                </div>
+            </div>
+            <div class="content-grid" style="margin-top: 3rem; max-width: 1000px;">
+                <div class="metric-card">
+                    <div class="metric-value">5.6:1</div>
+                    <div class="metric-label">LTV:CAC</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">68%</div>
+                    <div class="metric-label">Gross Margin</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">3.2mo</div>
+                    <div class="metric-label">Payback Period</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Traction -->
+        <div class="slide dark-bg">
+            <h2>Path to $100K MRR by March 2026</h2>
+            <p class="subtitle">6-Month Growth Trajectory</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-month">Month 1</div>
+                    <div class="timeline-mrr">$9K</div>
+                    <p>160 customers</p>
+                    <p style="opacity: 0.7; margin-top: 0.5rem;">Beta monetization</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-month">Month 2</div>
+                    <div class="timeline-mrr">$22K</div>
+                    <p>300 customers</p>
+                    <p style="opacity: 0.7; margin-top: 0.5rem;">Product Hunt</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-month">Month 3</div>
+                    <div class="timeline-mrr">$41K</div>
+                    <p>480 customers</p>
+                    <p style="opacity: 0.7; margin-top: 0.5rem;">Seed close</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-month">Month 6</div>
+                    <div class="timeline-mrr">$109K</div>
+                    <p>1,100 customers</p>
+                    <p style="opacity: 0.7; margin-top: 0.5rem;">Target exceeded</p>
+                </div>
+            </div>
+            <div class="highlight-box" style="margin-top: 3rem;">
+                <h3>2026 Targets</h3>
+                <p style="font-size: 1.5rem; margin-top: 1rem;">
+                    $5M ARR • 3,500+ customers • Series A ready metrics
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 8: Competition -->
+        <div class="slide dark-bg">
+            <h2>Creating the Revenue Intelligence Category</h2>
+            <p class="subtitle">PM 1.0 → PM 2.0 → PM 3.0</p>
+            <div class="competition-grid">
+                <div class="competitor-card">
+                    <h3>PM 1.0: Execution Tools</h3>
+                    <p style="opacity: 0.7; margin-bottom: 1rem;">2000-2015</p>
+                    <p><strong>Jira, Asana, Monday</strong></p>
+                    <p style="margin-top: 1rem;">Track tasks and tickets</p>
+                    <p style="color: #fb7185; margin-top: 0.5rem;">Missing: Strategy and intelligence</p>
+                </div>
+                <div class="competitor-card">
+                    <h3>PM 2.0: Planning Tools</h3>
+                    <p style="opacity: 0.7; margin-bottom: 1rem;">2015-2023</p>
+                    <p><strong>Productboard, Aha!, Roadmunk</strong></p>
+                    <p style="margin-top: 1rem;">Roadmaps and prioritization</p>
+                    <p style="color: #fb7185; margin-top: 0.5rem;">Missing: AI and revenue focus</p>
+                </div>
+                <div class="competitor-card pm33">
+                    <h3>PM 3.0: Revenue Intelligence</h3>
+                    <p style="opacity: 0.7; margin-bottom: 1rem;">2024+</p>
+                    <p><strong>PM33</strong></p>
+                    <p style="margin-top: 1rem;">AI-powered revenue acceleration</p>
+                    <p style="color: #10b981; margin-top: 0.5rem;">✓ Velocity + Intelligence + ROI</p>
+                </div>
+                <div class="competitor-card pm33">
+                    <h3>Our Moats</h3>
+                    <ul style="text-align: left; margin-top: 1rem; line-height: 2;">
+                        <li>✓ Category creation</li>
+                        <li>✓ Integration network</li>
+                        <li>✓ PM-specific AI</li>
+                        <li>✓ 10-min setup vs 6-month</li>
+                        <li>✓ 51% cheaper than incumbents</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Team -->
+        <div class="slide dark-bg">
+            <h2>Experienced Founders</h2>
+            <p class="subtitle">Complementary Skills • Proven Operators</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-avatar">CEO</div>
+                    <h3>[Your Name]</h3>
+                    <p style="color: #a855f7; margin-bottom: 1rem;">Co-Founder & CEO</p>
+                    <p style="opacity: 0.8;">[Your background - e.g., 10+ years product leadership]</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">CRO</div>
+                    <h3>George Alexandrov</h3>
+                    <p style="color: #a855f7; margin-bottom: 1rem;">Co-Founder & CRO</p>
+                    <p style="opacity: 0.8;">[Revenue leadership, GTM strategy expertise]</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">CTO</div>
+                    <h3>Petar Krivoshiev</h3>
+                    <p style="color: #a855f7; margin-bottom: 1rem;">Co-Founder & CTO</p>
+                    <p style="opacity: 0.8;">[Technical architecture, AI/ML expertise]</p>
+                </div>
+            </div>
+            <div class="highlight-box" style="margin-top: 3rem;">
+                <h3>Why We'll Win</h3>
+                <p style="font-size: 1.25rem; margin-top: 1rem; line-height: 1.8;">
+                    Domain Expertise • Complementary Skills • Proven Track Record • Founder-Market Fit
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 10: The Ask -->
+        <div class="slide gradient-bg">
+            <h2 style="color: white;">Raising $1.5M Seed</h2>
+            <div class="content-grid" style="max-width: 1000px;">
+                <div class="metric-card">
+                    <div class="metric-value" style="color: white;">$1.5M</div>
+                    <div class="metric-label">Raise Size</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" style="color: white;">$7-10M</div>
+                    <div class="metric-label">Pre-Money</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value" style="color: white;">18mo</div>
+                    <div class="metric-label">Runway</div>
+                </div>
+            </div>
+            <div class="content-grid" style="margin-top: 2rem;">
+                <div class="card">
+                    <h3>40% Product & AI</h3>
+                    <p>$600K</p>
+                    <p style="margin-top: 1rem; opacity: 0.8; font-size: 1rem;">
+                        AI infrastructure, enterprise features, integrations, security
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>35% Go-to-Market</h3>
+                    <p>$525K</p>
+                    <p style="margin-top: 1rem; opacity: 0.8; font-size: 1rem;">
+                        Sales team, marketing, customer success, community
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>25% Operations</h3>
+                    <p>$375K</p>
+                    <p style="margin-top: 1rem; opacity: 0.8; font-size: 1rem;">
+                        Key hires, infrastructure, legal, working capital
+                    </p>
+                </div>
+            </div>
+            <div class="highlight-box" style="margin-top: 2rem; background: rgba(255, 255, 255, 0.2); border-color: white;">
+                <h3 style="color: white;">Milestones</h3>
+                <p style="font-size: 1.25rem; margin-top: 1rem; color: white;">
+                    Month 12: $250K MRR • Month 18: $500K MRR • Series A Ready
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 11: Vision -->
+        <div class="slide gradient-bg">
+            <h1 style="color: white; font-size: 3rem;">Let's Build the Future of<br/>Product Management Together</h1>
+            <div class="content-grid" style="margin-top: 3rem;">
+                <div class="card">
+                    <h3>✓ Proven PMF</h3>
+                    <p>Paying customers, strong signals</p>
+                </div>
+                <div class="card">
+                    <h3>✓ AI Inflection</h3>
+                    <p>Perfect technology timing</p>
+                </div>
+                <div class="card">
+                    <h3>✓ Massive Market</h3>
+                    <p>$3.5B SAM, growing 13% CAGR</p>
+                </div>
+                <div class="card">
+                    <h3>✓ Strong Economics</h3>
+                    <p>5.6:1 LTV:CAC, 68% margins</p>
+                </div>
+                <div class="card">
+                    <h3>✓ Clear Path</h3>
+                    <p>Market leadership position</p>
+                </div>
+                <div class="card">
+                    <h3>✓ Proven Team</h3>
+                    <p>Founder-market fit</p>
+                </div>
+            </div>
+            <div class="highlight-box" style="margin-top: 3rem; background: rgba(255, 255, 255, 0.2); border-color: white;">
+                <h2 style="color: white;">pm-33.io</h2>
+                <p style="color: white; font-size: 1.25rem; margin-top: 1rem;">investors@pm-33.io</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="nav-controls">
+        <button class="nav-btn" onclick="previousSlide()">← Previous</button>
+        <span class="slide-indicator" id="slideIndicator">1 / 11</span>
+        <button class="nav-btn" onclick="nextSlide()">Next →</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active');
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                }
+            });
+            
+            document.getElementById('slideIndicator').textContent = `${currentSlide + 1} / ${totalSlides}`;
+            document.getElementById('progressBar').style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+
+        function previousSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+
+        function toggleFullscreen() {
+            const elem = document.getElementById('presentation');
+            if (!document.fullscreenElement) {
+                elem.requestFullscreen().catch(err => {
+                    alert(`Error: ${err.message}`);
+                });
+                document.body.classList.add('fullscreen-active');
+            } else {
+                document.exitFullscreen();
+                document.body.classList.remove('fullscreen-active');
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                previousSlide();
+            } else if (e.key === 'f' || e.key === 'F') {
+                toggleFullscreen();
+            }
+        });
+
+        // Initialize
+        updateSlide();
+    </script>
+</body>
+</html>

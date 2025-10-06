@@ -1,0 +1,2489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Primary Meta Tags -->
+    <title>PM33 - Revenue Acceleration Platform | Investor Portal</title>
+    <meta name="title" content="PM33 - Revenue Acceleration Platform | Investor Portal">
+    <meta name="description" content="PM33 is creating the Product Management 3.0 category. AI-native revenue acceleration platform with 5.6:1 LTV:CAC and 68% gross margins. Raising $1.5M seed.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pm33.com/investors">
+    <meta property="og:title" content="PM33 - Revenue Acceleration Platform | Investor Portal">
+    <meta property="og:description" content="AI-native revenue acceleration platform creating the PM 3.0 category. 5.6:1 LTV:CAC, 68% gross margins, $100K MRR target Q1 2026.">
+    <meta property="og:image" content="https://pm33.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://pm33.com/investors">
+    <meta property="twitter:title" content="PM33 - Revenue Acceleration Platform | Investor Portal">
+    <meta property="twitter:description" content="AI-native revenue acceleration platform creating the PM 3.0 category. 5.6:1 LTV:CAC, 68% gross margins, $100K MRR target Q1 2026.">
+    <meta property="twitter:image" content="https://pm33.com/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚀%3C/text%3E%3C/svg%3E">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==================== CSS RESET & BASE ==================== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            /* Colors */
+            --color-primary: #0052CC;
+            --color-primary-dark: #003d99;
+            --color-primary-light: #4C9AFF;
+            --color-success: #00A86B;
+            --color-success-light: #36B37E;
+            --color-ai-accent: #6554C0;
+            --color-ai-light: #8777D9;
+            --color-text-primary: #172B4D;
+            --color-text-secondary: #5E6C84;
+            --color-text-tertiary: #8993A4;
+            --color-bg-primary: #FFFFFF;
+            --color-bg-secondary: #F4F5F7;
+            --color-bg-tertiary: #FAFBFC;
+            --color-border: #DFE1E6;
+            --color-border-light: #EBECF0;
+
+            /* Typography */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            --font-size-5xl: 3rem;
+            --font-size-6xl: 3.75rem;
+
+            /* Spacing */
+            --space-1: 0.5rem;
+            --space-2: 1rem;
+            --space-3: 1.5rem;
+            --space-4: 2rem;
+            --space-5: 2.5rem;
+            --space-6: 3rem;
+            --space-8: 4rem;
+            --space-10: 5rem;
+            --space-12: 6rem;
+            --space-16: 8rem;
+
+            /* Breakpoints */
+            --breakpoint-sm: 640px;
+            --breakpoint-md: 768px;
+            --breakpoint-lg: 1024px;
+            --breakpoint-xl: 1280px;
+            --breakpoint-2xl: 1536px;
+
+            /* Transitions */
+            --transition-fast: 150ms ease-in-out;
+            --transition-base: 250ms ease-in-out;
+            --transition-slow: 350ms ease-in-out;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+            /* Z-index */
+            --z-dropdown: 1000;
+            --z-sticky: 1020;
+            --z-fixed: 1030;
+            --z-modal-backdrop: 1040;
+            --z-modal: 1050;
+            --z-popover: 1060;
+            --z-tooltip: 1070;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-family);
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+            color: var(--color-text-primary);
+            background-color: var(--color-bg-primary);
+            overflow-x: hidden;
+        }
+
+        /* ==================== TYPOGRAPHY ==================== */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--space-3);
+            color: var(--color-text-primary);
+        }
+
+        h1 { font-size: var(--font-size-5xl); letter-spacing: -0.02em; }
+        h2 { font-size: var(--font-size-4xl); letter-spacing: -0.01em; }
+        h3 { font-size: var(--font-size-3xl); }
+        h4 { font-size: var(--font-size-2xl); }
+        h5 { font-size: var(--font-size-xl); }
+        h6 { font-size: var(--font-size-lg); }
+
+        p {
+            margin-bottom: var(--space-3);
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--color-primary-dark);
+        }
+
+        strong {
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+
+        /* ==================== LAYOUT ==================== */
+        .container {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 var(--space-4);
+        }
+
+        .container-narrow {
+            max-width: 1200px;
+        }
+
+        .container-tight {
+            max-width: 960px;
+        }
+
+        section {
+            padding: var(--space-12) 0;
+            position: relative;
+        }
+
+        .section-bg-secondary {
+            background-color: var(--color-bg-secondary);
+        }
+
+        .section-bg-tertiary {
+            background-color: var(--color-bg-tertiary);
+        }
+
+        /* ==================== COMPONENTS ==================== */
+
+        /* Progress Indicator */
+        #progress-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-success));
+            z-index: var(--z-fixed);
+            transition: width var(--transition-fast);
+        }
+
+        /* Navigation */
+        .nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-border-light);
+            z-index: var(--z-sticky);
+            padding: var(--space-3) 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-cta {
+            display: flex;
+            gap: var(--space-2);
+            align-items: center;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-2) var(--space-4);
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            line-height: 1.5;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-primary-dark);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-1px);
+            color: white;
+        }
+
+        .btn-success {
+            background: var(--color-success);
+            color: white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-success:hover {
+            background: #008f5c;
+            box-shadow: var(--shadow-md);
+            transform: translateY(-1px);
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .btn-lg {
+            padding: var(--space-3) var(--space-5);
+            font-size: var(--font-size-lg);
+        }
+
+        .btn-sm {
+            padding: var(--space-1) var(--space-3);
+            font-size: var(--font-size-sm);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--color-bg-primary);
+            border-radius: 16px;
+            padding: var(--space-5);
+            box-shadow: var(--shadow-base);
+            transition: all var(--transition-base);
+            border: 1px solid var(--color-border-light);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .card-glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Metrics Cards */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-4);
+            margin: var(--space-6) 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, rgba(0, 82, 204, 0.05), rgba(101, 84, 192, 0.05));
+            border: 2px solid var(--color-border);
+            border-radius: 20px;
+            padding: var(--space-5);
+            text-align: center;
+            transition: all var(--transition-base);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--color-primary-light);
+        }
+
+        .metric-value {
+            font-size: var(--font-size-5xl);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-ai-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-2);
+            line-height: 1.1;
+        }
+
+        .metric-label {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .metric-sublabel {
+            font-size: var(--font-size-xs);
+            color: var(--color-text-tertiary);
+            margin-top: var(--space-1);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: var(--space-16) 0 var(--space-12);
+            background: linear-gradient(180deg, #FAFBFC 0%, #FFFFFF 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(0, 82, 204, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(101, 84, 192, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: var(--space-1) var(--space-3);
+            background: rgba(101, 84, 192, 0.1);
+            border: 1px solid var(--color-ai-accent);
+            border-radius: 100px;
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            color: var(--color-ai-accent);
+            margin-bottom: var(--space-4);
+        }
+
+        .hero-title {
+            font-size: var(--font-size-6xl);
+            font-weight: 800;
+            margin-bottom: var(--space-4);
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: var(--font-size-2xl);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-6);
+            font-weight: 400;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: var(--space-3);
+            justify-content: center;
+            margin-bottom: var(--space-8);
+            flex-wrap: wrap;
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-8);
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: var(--space-1) var(--space-3);
+            background: rgba(0, 82, 204, 0.1);
+            color: var(--color-primary);
+            border-radius: 100px;
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-3);
+        }
+
+        .section-title {
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--space-3);
+        }
+
+        .section-description {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Problem Section */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-4);
+            margin-top: var(--space-6);
+        }
+
+        .problem-card {
+            background: white;
+            border-left: 4px solid #FF5630;
+            padding: var(--space-4);
+            border-radius: 12px;
+            box-shadow: var(--shadow-base);
+        }
+
+        .problem-card h4 {
+            color: #FF5630;
+            margin-bottom: var(--space-2);
+        }
+
+        .problem-stat {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-1);
+        }
+
+
+        /* Traction Section */
+        .traction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-5);
+            margin-top: var(--space-6);
+        }
+
+        .traction-item {
+            text-align: center;
+        }
+
+        .traction-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto var(--space-3);
+            background: linear-gradient(135deg, var(--color-success), var(--color-success-light));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-3xl);
+        }
+
+        .traction-value {
+            font-size: var(--font-size-3xl);
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-1);
+        }
+
+        .traction-label {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-base);
+        }
+
+        /* Chart Container */
+        .chart-container {
+            background: white;
+            border-radius: 20px;
+            padding: var(--space-6);
+            box-shadow: var(--shadow-lg);
+            margin: var(--space-6) 0;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            height: 400px;
+            margin-top: var(--space-4);
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-5);
+            margin-top: var(--space-6);
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 16px;
+            padding: var(--space-5);
+            text-align: center;
+            box-shadow: var(--shadow-base);
+            transition: all var(--transition-base);
+        }
+
+        .team-card:hover {
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-4px);
+        }
+
+        .team-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-primary-light), var(--color-ai-light));
+            margin: 0 auto var(--space-3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-4xl);
+            font-weight: 700;
+            overflow: hidden;
+            border: 3px solid rgba(0, 168, 107, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            color: white;
+        }
+
+        .team-name {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-1);
+        }
+
+        .team-role {
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: var(--space-2);
+        }
+
+        .team-bio {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--space-3);
+        }
+
+        .team-linkedin {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 50%;
+            transition: all var(--transition-base);
+            margin-top: var(--space-2);
+        }
+
+        .team-linkedin:hover {
+            background: var(--color-primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            color: white;
+        }
+
+        /* Economics Grid */
+        .economics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-4);
+            margin: var(--space-6) 0;
+        }
+
+        .economics-card {
+            background: white;
+            border-radius: 16px;
+            padding: var(--space-4);
+            text-align: center;
+            border: 2px solid var(--color-border);
+            transition: all var(--transition-base);
+        }
+
+        .economics-card:hover {
+            border-color: var(--color-success);
+            box-shadow: var(--shadow-md);
+        }
+
+        .economics-value {
+            font-size: var(--font-size-4xl);
+            font-weight: 800;
+            color: var(--color-success);
+            margin-bottom: var(--space-2);
+        }
+
+        .economics-label {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            font-weight: 600;
+        }
+
+        /* Use of Funds */
+        .funds-list {
+            max-width: 800px;
+            margin: var(--space-6) auto;
+        }
+
+        .fund-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--space-4);
+            background: white;
+            border-radius: 12px;
+            margin-bottom: var(--space-3);
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .fund-info {
+            flex: 1;
+        }
+
+        .fund-category {
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            margin-bottom: var(--space-1);
+        }
+
+        .fund-description {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+        }
+
+        .fund-amount {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-left: var(--space-3);
+        }
+
+        .fund-bar {
+            height: 8px;
+            background: var(--color-bg-secondary);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: var(--space-2);
+        }
+
+        .fund-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-success));
+            transition: width 1s ease-out;
+        }
+
+        /* Investment Ask */
+        .investment-ask {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-ai-accent));
+            color: white;
+            padding: var(--space-10) 0;
+            text-align: center;
+        }
+
+        .investment-ask h2,
+        .investment-ask p {
+            color: white;
+        }
+
+        .investment-terms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-4);
+            margin: var(--space-6) 0;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .term-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: var(--space-4);
+        }
+
+        .term-value {
+            font-size: var(--font-size-4xl);
+            font-weight: 800;
+            margin-bottom: var(--space-2);
+        }
+
+        .term-label {
+            font-size: var(--font-size-base);
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-text-primary);
+            color: white;
+            padding: var(--space-8) 0 var(--space-4);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-6);
+            margin-bottom: var(--space-6);
+        }
+
+        .footer-section h4 {
+            color: white;
+            margin-bottom: var(--space-3);
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: var(--font-size-sm);
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .trust-signals {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-3);
+            margin-top: var(--space-3);
+        }
+
+        .trust-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: var(--space-1) var(--space-2);
+            border-radius: 6px;
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--space-4);
+            text-align: center;
+            font-size: var(--font-size-sm);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Sticky CTA Bar */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--color-border);
+            padding: var(--space-3) 0;
+            z-index: var(--z-sticky);
+            transform: translateY(100%);
+            transition: transform var(--transition-base);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-cta-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sticky-cta-text {
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+
+        .sticky-cta-actions {
+            display: flex;
+            gap: var(--space-2);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: var(--z-modal);
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-4);
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-backdrop {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            animation: fadeIn 0.2s ease-out;
+        }
+
+        .modal-content {
+            position: relative;
+            background: white;
+            border-radius: 24px;
+            padding: var(--space-6);
+            max-width: 500px;
+            width: 100%;
+            box-shadow: var(--shadow-2xl);
+            animation: slideUp 0.3s ease-out;
+        }
+
+        .modal-header {
+            margin-bottom: var(--space-4);
+        }
+
+        .modal-header h3 {
+            margin-bottom: var(--space-2);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: var(--space-3);
+            right: var(--space-3);
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: var(--color-bg-secondary);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast);
+            font-size: var(--font-size-xl);
+            color: var(--color-text-secondary);
+        }
+
+        .modal-close:hover {
+            background: var(--color-border);
+            transform: rotate(90deg);
+        }
+
+        /* Form */
+        .form-group {
+            margin-bottom: var(--space-4);
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: var(--space-1);
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: var(--space-2) var(--space-3);
+            border: 2px solid var(--color-border);
+            border-radius: 8px;
+            font-size: var(--font-size-base);
+            font-family: var(--font-family);
+            transition: all var(--transition-fast);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.1);
+        }
+
+        .form-input.error {
+            border-color: #FF5630;
+        }
+
+        .form-error {
+            color: #FF5630;
+            font-size: var(--font-size-sm);
+            margin-top: var(--space-1);
+            display: none;
+        }
+
+        .form-error.visible {
+            display: block;
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-2);
+        }
+
+        .form-checkbox input {
+            margin-top: 4px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .form-checkbox label {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            cursor: pointer;
+        }
+
+        .form-success {
+            text-align: center;
+            padding: var(--space-6);
+        }
+
+        .success-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--color-success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-3);
+            font-size: var(--font-size-3xl);
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 0.8s linear infinite;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .slide-up {
+            animation: slideUp 0.6s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            :root {
+                --font-size-6xl: 2.5rem;
+                --font-size-5xl: 2rem;
+                --font-size-4xl: 1.75rem;
+            }
+
+            section {
+                padding: var(--space-8) 0;
+            }
+
+            .hero {
+                padding: var(--space-10) 0 var(--space-8);
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --font-size-6xl: 2rem;
+                --font-size-5xl: 1.75rem;
+                --font-size-4xl: 1.5rem;
+                --font-size-3xl: 1.25rem;
+            }
+
+            .container {
+                padding: 0 var(--space-3);
+            }
+
+            section {
+                padding: var(--space-6) 0;
+            }
+
+            .hero {
+                padding: var(--space-8) 0 var(--space-6);
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .sticky-cta-content {
+                flex-direction: column;
+                gap: var(--space-2);
+            }
+
+            .sticky-cta-actions {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .sticky-cta-actions .btn {
+                width: 100%;
+            }
+
+            .chart-wrapper {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: var(--font-size-4xl);
+            }
+
+            .hero-subtitle {
+                font-size: var(--font-size-lg);
+            }
+
+            .metric-value {
+                font-size: var(--font-size-3xl);
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .nav,
+            .sticky-cta,
+            .modal,
+            .video-icon,
+            .btn,
+            #progress-indicator {
+                display: none !important;
+            }
+
+            section {
+                page-break-inside: avoid;
+                padding: 20px 0;
+            }
+
+            .hero {
+                background: white !important;
+            }
+
+            .card,
+            .metric-card {
+                box-shadow: none !important;
+                border: 1px solid var(--color-border) !important;
+            }
+
+            * {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Focus visible */
+        *:focus-visible {
+            outline: 3px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Indicator -->
+    <div id="progress-indicator" role="progressbar" aria-label="Page scroll progress"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" role="navigation">
+        <div class="container">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB8AAAANSCAYAAAAaodRRAAAACXBIWXMAAAsSAAALEgHS3X78AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAIABJREFUeJzs3Xd4HNd5L+BvFgTYAXYShZ1iL2okJVkS1S0rtiW5SXZcrltynbgkshTnOsn14zhxj5PYN4l7i4tK4kiyLFm9W5QoUYVgFzsBsPeOMvcPUCBBopIgQQ7f93n4gDt75uy3i93F7vzmnJOkaRoAAAAAAAAAcLrLdXYBAAAAAAAAANARBOAAAAAAAAAAZIIAHAAAAAAAAIBMEIADAAAAAAAAkAkCcAAAAAAAAAAyQQAOAAAAAAAAQCYIwAEAAAAAAADIBAE4AAAAAAAAAJkgAAcAAAAAAAAgEwTgAAAAAAAAAGSCABwAAAAAAACATBCAAwAAAAAAAJAJAnAAAAAAAAAAMkEADgAAAAAAAEAmCMABAAAAAAAAyAQBOAAAAAAAAACZIAAHAAAAAAAAIBME4AAAAAAAAABkggAcAAAAAAAAgEwQgAMAAAAAAACQCQJwAAAAAAAAADJBAA4AAAAAAABAJgjAAQAAAAAAAMgEATgAAAAAAAAAmSAABwAAAAAAACATBOAAAAAAAAAAZIIAHAAAAAAAAIBMEIADAAAAAAAAkAkCcAAAAAAAAAAyQQAOAAAAAAAAQCYIwAEAAAAAAADIBAE4AAAAAAAAAJkgAAcAAAAAAAAgEwTgAAAAAAAAAGSCABwAAAAAAACATBCAAwAAAAAAAJAJAnAAAAAAAAAAMkEADgAAAAAAAEAmCMABAAAAAAAAyAQBOAAAAAAAAACZIAAHAAAAAAAAIBME4AAAAAAAAABkggAcAAAAAAAAgEwQgAMAAAAAAACQCQJwAAAAAAAAADJBAA4AAAAAAABAJgjAAQAAAAAAAMgEATgAAAAAAAAAmSAABwAAAAAAACATBOAAAAAAAAAAZIIAHAAAAAAAAIBMEIADAAAAAAAAkAkCcAAAAAAAAAAyQQAOAAAAAAAAQCYIwAEAAAAAAADIBAE4AAAAAAAAAJkgAAcAAAAAAAAgEwTgAAAAAAAAAGSCABwAAAAAAACATBCAAwAAAAAAAJAJAnAAAAAAAAAAMkEADgAAAAAAAEAmCMABAAAAAAAAyAQBOAAAAAAAAACZIAAHAAAAAAAAIBME4AAAAAAAAABkggAcAAAAAAAAgEwQgAMAAAAAAACQCQJwAAAAAAAAADJBAA4AAAAAAABAJgjAAQAAAAAAAMgEATgAAAAAAAAAmSAABwAAAAAAACATBOAAAAAAAAAAZIIAHAAAAAAAAIBMEIADAAAAAAAAkAkCcAAAAAAAAAAyQQAOAAAAAAAAQCYIwAEAAAAAAADIBAE4AAAAAAAAAJkgAAcAAAAAAAAgEwTgAAAAAAAAAGSCABwAAAAAAACATBCAAwAAAAAAAJAJAnAAAAAAAAAAMkEADgAAAAAAAEAmCMABAAAAAAAAyAQBOAAAAAAAAACZIAAHAAAAAAAAIBME4AAAAAAAAABkggAcAAAAAAAAgEwQgAMAAAAAAACQCQJwAAAAAAAAADJBAA4AAAAAAABAJgjAAQAAAAAAAMgEATgAAAAAAAAAmSAABwAAAAAAACATBOAAAAAAAAAAZIIAHAAAAAAAAIBMEIADAAAAAAAAkAkCcAAAAAAAAAAyQQAOAAAAAAAAQCYIwAEAAAAAAADIBAE4AAAAAAAAAJkgAAcAAAAAAAAgEwTgAAAAAAAAAGSCABwAAAAAAACATBCAAwAAAAAAAJAJAnAAAAAAAAAAMkEADgAAAAAAAEAmCMABAAAAAAAAyAQBOAAAAAAAAACZIAAHAAAAAAAAIBME4AAAAAAAAABkggAcAAAAAAAAgEwQgAMAAAAAAACQCQJwAAAAAAAAADJBAA4AAAAAAABAJgjAAQAAAAAAAMgEATgAAAAAAAAAmSAABwAAAAAAACATBOAAAAAAAAAAZIIAHAAAAAAAAIBMEIADAAAAAAAAkAkCcAAAAAAAAAAyQQAOAAAAAAAAQCYIwAEAAAAAAADIBAE4AAAAAAAAAJkgAAcAAAAAAAAgEwTgAAAAAAAAAGSCABwAAAAAAACATBCAAwAAAAAAAJAJAnAAAAAAAAAAMkEADgAAAAAAAEAmCMABAAAAAAAAyAQBOAAAAAAAAACZIAAHAAAAAAAAIBME4AAAAAAAAABkggAcAAAAAAAAgEwQgAMAAAAAAACQCQJwAAAAAAAAADJBAA4AAAAAAABAJgjAAQAAAAAAAMgEATgAAAAAAAAAmSAABwAAAAAAACATBOAAAAAAAAAAZIIAHAAAAAAAAIBMEIADAAAAAAAAkAkCcAAAAAAAAAAyQQAOAAAAAAAAQCYIwAEAAAAAAADIBAE4AAAAAAAAAJkgAAcAAAAAAAAgEwTgAAAAAAAAAGSCABwAAAAAAACATBCAAwAAAAAAAJAJAnAAAAAAAAAAMkEADgAAAAAAAEAmCMABAAAAAAAAyAQBOAAAAAAAAACZIAAHAAAAAAAAIBME4AAAAAAAAABkggAcAAAAAAAAgEwQgAMAAAAAAACQCQJwAAAAAAAAADJBAA4AAAAAAABAJgjAAQAAAAAAAMgEATgAAAAAAAAAmSAABwAAAAAAACATBOAAAAAAAAAAZIIAHAAAAAAAAIBMEIADAAAAAAAAkAkCcAAAAAAAAAAyQQAOAAAAAAAAQCYIwAEAAAAAAADIBAE4AAAAAAAAAJkgAAcAAAAAAAAgEwTgAAAAAAAAAGSCABwAAAAAAACATBCAAwAAAAAAAJAJAnAAAAAAAAAAMkEADgAAAAAAAEAmCMABAAAAAAAAyAQBOAAAAAAAAACZIAAHAAAAAAAAIBME4AAAAAAAAABkggAcAAAAAAAAgEwQgAMAAAAAAACQCQJwAAAAAAAAADJBAA4AAAAAAABAJgjAAQAAAAAAAMgEATgAAAAAAAAAmSAABwAAAAAAACATBOAAAAAAAAAAZIIAHAAAAAAAAIBMEIADAAAAAAAAkAkCcAAAAAAAAAAyQQAOAAAAAAAAQCYIwAEAAAAAAADIBAE4AAAAAAAAAJkgAAcAAAAAAAAgEwTgAAAAAAAAAGSCABwAAAAAAACATBCAAwAAAAAAAJAJAnAAAAAAAAAAMkEADgAAAAAAAEAmCMABAAAAAAAAyAQBOAAAAAAAAACZIAAHAAAAAAAAIBME4AAAAAAAAABkggAcAAAAAAAAgEwQgAMAAAAAAACQCQJwAAAAAAAAADJBAA4AAAAAAABAJgjAAQAAAAAAAMgEATgAAAAAAAAAmSAABwAAAAAAACATBOAAAAAAAAAAZIIAHAAAAAAAAIBMEIADAAAAAAAAkAkCcAAAAAAAAAAyQQAOAAAAAAAAQCYIwAEAAAAAAADIBAE4AAAAAAAAAJkgAAcAAAAAAAAgEwTgAAAAAAAAAGSCABwAAAAAAACATBCAAwAAAAAAAJAJAnAAAAAAAAAAMkEADgAAAAAAAEAmCMABAAAAAAAAyAQBOAAAAAAAAACZIAAHAAAAAAAAIBME4AAAAAAAAABkggAcAAAAAAAAgEwQgAMAAAAAAACQCQJwAAAAAAAAADJBAA4AAAAAAABAJgjAAQAAAAAAAMgEATgAAAAAAAAAmSAABwAAAAAAACATBOAAAAAAAAAAZIIAHAAAAAAAAIBMEIADAAAAAAAAkAkCcAAAAAAAAAAyQQAOAAAAAAAAQCYIwAEAAAAAAADIBAE4AAAAAAAAAJkgAAcAAAAAAAAgEwTgAAAAAAAAAGSCABwAAAAAAACATBCAAwAAAAAAAJAJAnAAAAAAAAAAMkEADgAAAAAAAEAmCMABAAAAAAAAyAQBOAAAAAAAAACZIAAHAAAAAAAAIBME4AAAAAAAAABkggAcAAAAAAAAgEwQgAMAAAAAAACQCQJwAAAAAAAAADJBAA4AAAAAAABAJgjAAQAAAAAAAMgEATgAAAAAAAAAmSAABwAAAAAAACATBOAAAAAAAAAAZIIAHAAAAAAAAIBMEIADAAAAAAAAkAkCcAAAAAAAAAAyQQAOAAAAAAAAQCYIwAEAAAAAAADIBAE4AAAAAAAAAJkgAAcAAAAAAAAgEwTgAAAAAAAAAGSCABwAAAAAAACATBCAAwAAAAAAAJAJAnAAAAAAAAAAMkEADgAAAAAAAEAmCMABAAAAAAAAyAQBOAAAAAAAAACZIAAHAAAAAAAAIBME4AAAAAAAAABkggAcAAAAAAAAgEwQgAMAAAAAAACQCQJwAAAAAAAAADJBAA4AAAAAAABAJgjAAQAAAAAAAMgEATgAAAAAAAAAmSAABwAAAAAAACATBOAAAAAAAAAAZIIAHAAAAAAAAIBMEIADAAAAAAAAkAkCcAAAAAAAAAAyQQAOAAAAAAAAQCYIwAEAAAAAAADIBAE4AAAAAAAAAJkgAAcAAAAAAAAgEwTgAAAAAAAAAGSCABwAAAAAAACATBCAAwAAAAAAAJAJAnAAAAAAAAAAMkEADgAAAAAAAEAmCMABAAAAAAAAyAQBOAAAAAAAAACZIAAHAAAAAAAAIBME4AAAAAAAAABkggAcAAAAAAAAgEwQgAMAAAAAAACQCQJwAAAAAAAAADJBAA4AAAAAAABAJgjAAQAAAAAAAMgEATgAAAAAAAAAmSAABwAAAAAAACATBOAAAAAAAAAAZIIAHAAAAAAAAIBMEIADAAAAAAAAkAkCcAAAAAAAAAAyQQAOAAAAAAAAQCYI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
+
+... [1 lines truncated] ...
+
+" alt="PM33 Logo">
+                </div>
+                <div class="nav-cta">
+                    <a href="#ask" class="btn btn-outline">View Terms</a>
+                    <button class="btn btn-primary" onclick="openEmailModal()">Get Access</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container container-narrow">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    Creating the PM 3.0 Category
+                </div>
+                <h1 class="hero-title">
+                    Revenue Acceleration Platform<br>for Product Teams
+                </h1>
+                <p class="hero-subtitle">
+                    PM33 is the AI-native platform creating the Product Management 3.0 category.
+                    Like Agile replaced Waterfall, PM33 replaces manual product ops with intelligent automation.
+                </p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary btn-lg" onclick="openEmailModal()">
+                        Get Investor Materials
+                    </button>
+                    <a href="#ask" class="btn btn-outline btn-lg">
+                        View Investment Terms
+                    </a>
+                </div>
+
+                <!-- Key Metrics -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value" data-target="5.6">0</div>
+                        <div class="metric-label">LTV:CAC Ratio</div>
+                        <div class="metric-sublabel">Industry benchmark: 3:1</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" data-target="68" data-suffix="%">0%</div>
+                        <div class="metric-label">Gross Margin</div>
+                        <div class="metric-sublabel">SaaS-scale economics</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" data-target="3.2" data-suffix="mo">0mo</div>
+                        <div class="metric-label">CAC Payback</div>
+                        <div class="metric-sublabel">Target: <6 months</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">$100K</div>
+                        <div class="metric-label">MRR Target</div>
+                        <div class="metric-sublabel">Q1 2026</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="section-bg-secondary">
+        <div class="container container-narrow">
+            <div class="section-header">
+                <span class="section-label">The Problem</span>
+                <h2 class="section-title">Product Teams Are Drowning in Manual Work</h2>
+                <p class="section-description">
+                    While engineering automated CI/CD, product management still runs on spreadsheets,
+                    manual workflows, and tribal knowledge. This operational debt is killing velocity.
+                </p>
+            </div>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-stat">60%</div>
+                    <h4>Time on Non-Strategic Work</h4>
+                    <p>Product managers spend the majority of their time on status updates,
+                    roadmap maintenance, and stakeholder alignment instead of strategy.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-stat">$2.3M</div>
+                    <h4>Average Cost of Delayed Launch</h4>
+                    <p>Manual workflows and coordination overhead cause costly delays in
+                    time-to-market for critical product initiatives.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-stat">83%</div>
+                    <h4>PMs Report Tool Fatigue</h4>
+                    <p>Product teams juggle 10+ disconnected tools, creating data silos and
+                    context switching that reduces productivity.</p>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: var(--space-6); padding: var(--space-5); text-align: center; background: linear-gradient(135deg, rgba(255, 86, 48, 0.1), rgba(255, 86, 48, 0.05));">
+                <h3 style="color: #FF5630; margin-bottom: var(--space-3);">
+                    The PM 2.0 Era Is Over
+                </h3>
+                <p style="font-size: var(--font-size-lg); max-width: 800px; margin: 0 auto;">
+                    PM 1.0 was waterfall product development. PM 2.0 brought Agile and modern tools.
+                    <strong>PM 3.0 is AI-native revenue acceleration</strong> - where product operations
+                    run automatically and PMs focus on strategic decisions that drive growth.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution">
+        <div class="container container-narrow">
+            <div class="section-header">
+                <span class="section-label">The Solution</span>
+                <h2 class="section-title">AI-Native Revenue Acceleration Platform</h2>
+                <p class="section-description">
+                    PM33 automates product operations end-to-end, giving product teams superpowers to
+                    ship faster, align stakeholders automatically, and drive measurable revenue impact.
+                </p>
+            </div>
+
+            <div class="card" style="margin: var(--space-6) 0; padding: var(--space-6);">
+                <h3 style="margin-bottom: var(--space-4); text-align: center;">Core Capabilities</h3>
+                <div class="traction-grid">
+                    <div class="traction-item">
+                        <div class="traction-icon">🎯</div>
+                        <div class="traction-label">
+                            <strong>Intelligent Roadmapping</strong><br>
+                            AI-powered prioritization based on revenue impact, effort, and strategic alignment
+                        </div>
+                    </div>
+                    <div class="traction-item">
+                        <div class="traction-icon">⚡</div>
+                        <div class="traction-label">
+                            <strong>Automated Workflows</strong><br>
+                            Self-updating status reports, stakeholder sync, and cross-functional coordination
+                        </div>
+                    </div>
+                    <div class="traction-item">
+                        <div class="traction-icon">📊</div>
+                        <div class="traction-label">
+                            <strong>Revenue Attribution</strong><br>
+                            Connect product initiatives directly to revenue outcomes and business KPIs
+                        </div>
+                    </div>
+                    <div class="traction-item">
+                        <div class="traction-icon">🧠</div>
+                        <div class="traction-label">
+                            <strong>Knowledge Intelligence</strong><br>
+                            Institutional knowledge capture and context-aware recommendations
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Traction Section -->
+    <section id="traction">
+        <div class="container container-narrow">
+            <div class="section-header">
+                <span class="section-label">Traction & Validation</span>
+                <h2 class="section-title">Early Momentum & Market Validation</h2>
+                <p class="section-description">
+                    PM33 has validated product-market fit with early beta customers from Fortune 500 companies including LG and Accenture. Our 100+ company waitlist demonstrates strong demand for AI-native product intelligence.
+                </p>
+            </div>
+
+            <div class="traction-grid">
+                <div class="traction-item">
+                    <div class="traction-icon">🚀</div>
+                    <div class="traction-value">Oct 2024</div>
+                    <div class="traction-label">Beta Launch</div>
+                </div>
+                <div class="traction-item">
+                    <div class="traction-icon">🏢</div>
+                    <div class="traction-value">100+</div>
+                    <div class="traction-label">Waitlist Companies</div>
+                </div>
+                <div class="traction-item">
+                    <div class="traction-icon">⭐</div>
+                    <div class="traction-value">Enterprise</div>
+                    <div class="traction-label">Beta Customers</div>
+                </div>
+                <div class="traction-item">
+                    <div class="traction-icon">🎯</div>
+                    <div class="traction-value">Fortune 500</div>
+                    <div class="traction-label">Early Adopters</div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: var(--space-8); background: linear-gradient(135deg, rgba(0, 168, 107, 0.1), rgba(0, 168, 107, 0.05));">
+                <h3 style="margin-bottom: var(--space-4);">Enterprise Beta Customers</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: var(--space-6); align-items: center; justify-content: center; padding: var(--space-4) 0;">
+                    <div style="text-align: center;">
+                        <div style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--color-primary); margin-bottom: var(--space-2);">LG</div>
+                        <div style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">Global Technology Leader</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: var(--font-size-3xl); font-weight: 700; color: var(--color-primary); margin-bottom: var(--space-2);">Accenture</div>
+                        <div style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">Professional Services</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: var(--font-size-xl); font-weight: 600; color: var(--color-text-secondary); margin-bottom: var(--space-2);">+ more</div>
+                        <div style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">Additional enterprise teams</div>
+                    </div>
+                </div>
+                <div style="margin-top: var(--space-4); padding-top: var(--space-4); border-top: 1px solid rgba(0, 168, 107, 0.2); text-align: center;">
+                    <p style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">
+                        Beta customers include teams from Fortune 500 companies validating PM33's value proposition across enterprise product management workflows.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Opportunity Section -->
+    <section id="market" class="section-bg-secondary">
+        <div class="container container-narrow">
+            <div class="section-header">
+                <span class="section-label">Market Opportunity</span>
+                <h2 class="section-title">$30B TAM, Creating New Category</h2>
+                <p class="section-description">
+                    Massive market at the intersection of product management tools and AI-enhanced productivity.
+                </p>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">$30B</div>
+                    <div class="metric-label">Total Addressable Market</div>
+                    <div class="metric-sublabel">Product management software</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$3.5B</div>
+                    <div class="metric-label">Serviceable Available Market</div>
+                    <div class="metric-sublabel">AI-enhanced PM tools</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">13%</div>
+                    <div class="metric-label">Market CAGR</div>
+                    <div class="metric-sublabel">2024-2029 projected growth</div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: var(--space-6);">
+                <h3 style="margin-bottom: var(--space-4);">Perfect Timing: Three Converging Trends</h3>
+                <div style="display: grid; gap: var(--space-4); margin-top: var(--space-4);">
+                    <div style="display: flex; gap: var(--space-3);">
+                        <div style="flex-shrink: 0; width: 48px; height: 48px; background: linear-gradient(135deg, var(--color-ai-accent), var(--color-ai-light)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">1</div>
+                        <div>
+                            <h4 style="margin-bottom: var(--space-1);">AI Technology Maturity</h4>
+                            <p>LLMs are now production-ready for enterprise workflows, enabling true automation of knowledge work.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: var(--space-3);">
+                        <div style="flex-shrink: 0; width: 48px; height: 48px; background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">2</div>
+                        <div>
+                            <h4 style="margin-bottom: var(--space-1);">Economic Pressure for Efficiency</h4>
+                            <p>Companies must do more with less. PM teams are being asked to deliver faster with the same or smaller headcount.</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: var(--space-3);">
+                        <div style="flex-shrink: 0; width: 48px; height: 48px; background: linear-gradient(135deg, var(--color-success), var(--color-success-light)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">3</div>
+                        <div>
+                            <h4 style="margin-bottom: var(--space-1);">Revenue-Focused Product Culture</h4>
+                            <p>Product teams are shifting from feature factories to revenue drivers, requiring better attribution and impact measurement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MRR Growth Chart -->
+    <section id="projections">
+        <div class="container container-narrow">
+            <div class="section-header">
+                <span class="section-label">Financial Projections</span>
+                <h2 class="section-title">Path to $100K MRR</h2>
+                <p class="section-description">
+                    Conservative growth model based on proven customer acquisition channels and retention metrics.
+                </p>
+            </div>
+
+            <div class="chart-container">
+                <h4 style="text-align: center; margin-bottom: var(--space-2);">Monthly Recurring Revenue Projection</h4>
+                <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: 0;">18-Month Growth Trajectory</p>
+                <div class="chart-wrapper">
+                    <canvas id="mrrChart"></canvas>
+                </div>
+                <div style="margin-top: var(--space-4); padding: var(--space-4); background: var(--color-bg-tertiary); border-radius: 12px;">
+                    <h5 style="margin-bottom: var(--space-2);">Key Assumptions</h5>
+                    <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-2); list-style: none;">
+                        <li style="display: flex; align-items: center; gap: var(--space-2);">
+                            <span style="color: var(--color-success);">✓</span>
+                            <span>15-20% MoM growth rate</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: var(--space-2);">
+                            <span style="color: var(--color-success);">✓</span>
+                            <span>85%+ net revenue retention</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: var(--space-2);">
+                            <span style="color: var(--color-success);">✓</span>
+                            <span>$2,500 average deal size</span>
+                        </li>
+                        <li style="display: flex; align-items: center; gap: var(--space-2);">
+                            <span style="color: var(--color-success);">✓</span>
+                            <span>Multi-channel acquisition</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="section-bg-secondary">
+        <div class="container container-narrow">
+            <div class="section-header">
+                <span class="section-label">The Team</span>
+                <h2 class="section-title">Built by Product & AI Experts</h2>
+                <p class="section-description">
+                    The founding team brings complementary expertise from successfully building and exiting an audience platform to a media client. Over the past 6 months, we've invested deeply in understanding product management pain points and building the PM33 platform to solve them.
+                </p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQETQv5Y8MEloA/profile-displayphoto-scale_200_200/B4DZlYc6I3JUAc-/0/1758125603265?e=2147483647&v=beta&t=z18M0tNBmPf2zBhZs8wjdNkWt-Kect9GLwyk_sP1OkY" alt="Steven Saper" loading="lazy" />
+                    </div>
+                    <h3 class="team-name">Steven Saper</h3>
+                    <div class="team-role">CEO & Co-Founder</div>
+                    <p class="team-bio">
+                        Serial entrepreneur with expertise in audience platforms and media technology. Previously helped grow and sell an audience platform to a major media client. Leading PM33's vision after identifying critical product management pain points over 6 months of market research and development.
+                    </p>
+                    <a href="https://www.linkedin.com/in/ssaper/" target="_blank" class="team-linkedin" aria-label="Steven Saper LinkedIn Profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">GA</div>
+                    <h3 class="team-name">George Alexandrov</h3>
+                    <div class="team-role">CRO & Co-Founder</div>
+                    <p class="team-bio">
+                        Revenue and growth expert with proven track record in scaling SaaS platforms. Co-founded PM33 after experiencing firsthand the product velocity challenges facing modern teams. Drives go-to-market strategy and revenue operations.
+                    </p>
+                    <a href="https://www.linkedin.com/in/george-alexandrov-8ba998/" target="_blank" class="team-linkedin" aria-label="George Alexandrov LinkedIn Profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">PK</div>
+                    <h3 class="team-name">Petar Krivoshiev</h3>
+                    <div class="team-role">CTO & Co-Founder</div>
+                    <p class="team-bio">
+                        Technical architect specializing in AI/ML and product intelligence systems. Built the core PM33 platform leveraging 6 months of customer insights. Leads engineering and technical product development with focus on scalable, AI-native architecture.
+                    </p>
+                    <a href="https://www.linkedin.com/in/krivoshiev/" target="_blank" class="team-linkedin" aria-label="Petar Krivoshiev LinkedIn Profile">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: var(--space-6); text-align: center;">
+                <h4 style="margin-bottom: var(--space-3);">Advisors & Investors</h4>
+                <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4);">
+                    Building a network of strategic advisors and investors who bring deep expertise in enterprise SaaS, AI, and product management.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: var(--space-3); justify-content: center;">
+                    <div class="trust-badge">Advisory Network Forming</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unit Economics Section -->
+    <section id="economics">
+        <div class="container container-narrow">
+            <div class="section-header">
+                <span class="section-label">Unit Economics</span>
+                <h2 class="section-title">Exceptional SaaS Economics</h2>
+                <p class="section-description">
+                    Best-in-class metrics demonstrating efficient growth and sustainable business model.
+                </p>
+            </div>
+
+            <div class="economics-grid">
+                <div class="economics-card">
+                    <div class="economics-value">5.6:1</div>
+                    <div class="economics-label">LTV:CAC Ratio</div>
+                </div>
+                <div class="economics-card">
+                    <div class="economics-value">68%</div>
+                    <div class="economics-label">Gross Margin</div>
+                </div>
+                <div class="economics-card">
+                    <div class="economics-value">3.2mo</div>
+                    <div class="economics-label">CAC Payback Period</div>
+                </div>
+                <div class="economics-card">
+                    <div class="economics-value">85%+</div>
+                    <div class="economics-label">Net Revenue Retention</div>
+                </div>
+                <div class="economics-card">
+                    <div class="economics-value">$2.5K</div>
+                    <div class="economics-label">Average Deal Size</div>
+                </div>
+                <div class="economics-card">
+                    <div class="economics-value">$14K</div>
+                    <div class="economics-label">Customer LTV</div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: var(--space-6);">
+                <h4 style="margin-bottom: var(--space-4);">Why These Metrics Matter</h4>
+                <div style="display: grid; gap: var(--space-3);">
+                    <div style="padding: var(--space-3); background: var(--color-bg-tertiary); border-radius: 8px;">
+                        <strong style="color: var(--color-success);">5.6:1 LTV:CAC</strong> - More than double the 3:1 benchmark for healthy SaaS businesses, indicating highly efficient customer acquisition.
+                    </div>
+                    <div style="padding: var(--space-3); background: var(--color-bg-tertiary); border-radius: 8px;">
+                        <strong style="color: var(--color-success);">3.2 Month Payback</strong> - Well under the 12-month target, enabling rapid reinvestment in growth.
+                    </div>
+                    <div style="padding: var(--space-3); background: var(--color-bg-tertiary); border-radius: 8px;">
+                        <strong style="color: var(--color-success);">68% Gross Margin</strong> - Software-scale margins enabling aggressive investment in sales and product.
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: var(--space-6); padding: var(--space-5); background: linear-gradient(135deg, rgba(0, 168, 107, 0.1), rgba(0, 168, 107, 0.05)); border-radius: 16px;">
+                <h4 style="margin-bottom: var(--space-3);">Detailed Financial Projections</h4>
+                <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); max-width: 600px; margin-left: auto; margin-right: auto;">
+                    See our complete 18-month P&L, cash flow, and revenue projections
+                </p>
+                <a href="https://docs.google.com/spreadsheets/d/1uWbsj6hDtKiNeYNAVCwDksnu2ogDTnGcBd7oDxCRPRU/edit?usp=sharing" target="_blank" class="btn btn-success btn-lg">
+                    View Detailed Financial Projections
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use of Funds Section -->
+    <section id="funds" class="section-bg-secondary">
+        <div class="container container-narrow">
+            <div class="section-header">
+                <span class="section-label">Use of Funds</span>
+                <h2 class="section-title">18-Month Roadmap to $100K MRR</h2>
+                <p class="section-description">
+                    Strategic allocation focused on product development, go-to-market execution, and team building.
+                </p>
+            </div>
+
+            <div class="funds-list">
+                <div class="fund-item">
+                    <div class="fund-info">
+                        <div class="fund-category">Product & Engineering</div>
+                        <div class="fund-description">Core platform development, AI/ML infrastructure, integrations</div>
+                        <div class="fund-bar">
+                            <div class="fund-fill" data-width="40%" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="fund-amount">$600K</div>
+                </div>
+
+                <div class="fund-item">
+                    <div class="fund-info">
+                        <div class="fund-category">Sales & Marketing</div>
+                        <div class="fund-description">Customer acquisition, demand gen, sales team expansion</div>
+                        <div class="fund-bar">
+                            <div class="fund-fill" data-width="35%" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="fund-amount">$525K</div>
+                </div>
+
+                <div class="fund-item">
+                    <div class="fund-info">
+                        <div class="fund-category">Team & Operations</div>
+                        <div class="fund-description">Key hires, infrastructure, legal, compliance</div>
+                        <div class="fund-bar">
+                            <div class="fund-fill" data-width="20%" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="fund-amount">$300K</div>
+                </div>
+
+                <div class="fund-item">
+                    <div class="fund-info">
+                        <div class="fund-category">Runway & Reserve</div>
+                        <div class="fund-description">Working capital, contingency buffer</div>
+                        <div class="fund-bar">
+                            <div class="fund-fill" data-width="5%" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="fund-amount">$75K</div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: var(--space-6); text-align: center;">
+                <h4 style="margin-bottom: var(--space-3);">18-Month Milestones</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin-top: var(--space-4);">
+                    <div>
+                        <div style="font-weight: 700; color: var(--color-primary); margin-bottom: var(--space-1);">Month 6</div>
+                        <div style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">$20K MRR, 15 customers</div>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; color: var(--color-primary); margin-bottom: var(--space-1);">Month 12</div>
+                        <div style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">$50K MRR, 40 customers</div>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; color: var(--color-primary); margin-bottom: var(--space-1);">Month 18</div>
+                        <div style="font-size: var(--font-size-sm); color: var(--color-text-secondary);">$100K MRR, 80+ customers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Ask Section -->
+    <section id="ask" class="investment-ask">
+        <div class="container container-narrow">
+            <h2 style="font-size: var(--font-size-5xl); text-align: center; margin-bottom: var(--space-3);">
+                Investment Opportunity
+            </h2>
+            <p style="font-size: var(--font-size-xl); text-align: center; margin-bottom: var(--space-8); max-width: 800px; margin-left: auto; margin-right: auto;">
+                Join us in creating the Product Management 3.0 category and building the
+                revenue acceleration platform for modern product teams.
+            </p>
+
+            <div class="investment-terms">
+                <div class="term-card">
+                    <div class="term-value">$1.5M</div>
+                    <div class="term-label">Raise Amount</div>
+                </div>
+                <div class="term-card">
+                    <div class="term-value">$7-10M</div>
+                    <div class="term-label">Pre-Money Valuation</div>
+                </div>
+                <div class="term-card">
+                    <div class="term-value">FAST</div>
+                    <div class="term-label">Agreement Structure</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: var(--space-8);">
+                <button class="btn btn-success btn-lg" onclick="openEmailModal()" style="margin-bottom: var(--space-3);">
+                    Request FAST Agreement
+                </button>
+                <p style="font-size: var(--font-size-sm); opacity: 0.9;">
+                    Get full investor materials including financial model, product roadmap, and term sheet
+                </p>
+            </div>
+
+            <div style="margin-top: var(--space-8); padding: var(--space-5); background: rgba(255, 255, 255, 0.1); border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.2);">
+                <h4 style="text-align: center; margin-bottom: var(--space-4); color: white;">Why Invest Now?</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4);">
+                    <div>
+                        <div style="font-weight: 700; margin-bottom: var(--space-1);">🎯 Category Creation</div>
+                        <div style="font-size: var(--font-size-sm); opacity: 0.9;">First-mover in PM 3.0, defining the category like Atlassian did for dev tools</div>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; margin-bottom: var(--space-1);">⚡ Velocity Moat</div>
+                        <div style="font-size: var(--font-size-sm); opacity: 0.9;">AI-native architecture compounds advantages vs legacy tools retrofitting AI</div>
+                    </div>
+                    <div>
+                        <div style="font-weight: 700; margin-bottom: var(--space-1);">💰 Exceptional Economics</div>
+                        <div style="font-size: var(--font-size-sm); opacity: 0.9;">5.6:1 LTV:CAC and 3.2mo payback enable efficient scaling</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>PM33</h4>
+                    <p>
+                        Creating the Product Management 3.0 category with AI-native revenue acceleration.
+                    </p>
+                    <div class="trust-signals">
+                        <div class="trust-badge">SOC 2 Compliant</div>
+                        <div class="trust-badge">GDPR Ready</div>
+                        <div class="trust-badge">Enterprise Security</div>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:investors@pm33.com">investors@pm33.com</a>
+                    </p>
+                    <p>
+                        <strong>Schedule:</strong><br>
+                        <a href="mailto:investors@pm-33.io">investors@pm-33.io</a>
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <p><a href="#demo">Product Demo</a></p>
+                    <p><a href="#" onclick="openEmailModal(); return false;">Investor Deck</a></p>
+                    <p><a href="#ask">FAST Agreement</a></p>
+                    <p><a href="mailto:investors@pm-33.io?subject=Data%20Room%20Access">Request Data Room Access</a></p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <p><a href="https://pm-33.io/privacy">Privacy Policy</a></p>
+                    <p><a href="https://pm-33.io/terms">Terms of Service</a></p>
+                    <p style="margin-top: var(--space-3); font-size: var(--font-size-xs);">
+                        This document contains forward-looking statements and is for informational purposes only.
+                        Not an offer to sell securities.
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                &copy; 2025 PM33. All rights reserved. | Confidential - For Qualified Investors Only
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky CTA Bar -->
+    <div class="sticky-cta" id="stickyCta">
+        <div class="container">
+            <div class="sticky-cta-content">
+                <div class="sticky-cta-text">
+                    Raising $1.5M at $7-10M pre-money | 5.6:1 LTV:CAC
+                </div>
+                <div class="sticky-cta-actions">
+                    <a href="#ask" class="btn btn-outline btn-sm">View Terms</a>
+                    <button class="btn btn-primary btn-sm" onclick="openEmailModal()">Get Investor Materials</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Capture Modal -->
+    <div class="modal" id="emailModal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+        <div class="modal-backdrop" onclick="closeEmailModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeEmailModal()" aria-label="Close modal">&times;</button>
+
+            <div id="modalForm">
+                <div class="modal-header">
+                    <h3 id="modalTitle">Access Investor Materials</h3>
+                    <p style="color: var(--color-text-secondary);">
+                        Get instant access to our interactive demo, full investor deck, and FAST agreement.
+                    </p>
+                </div>
+
+                <form id="emailForm" onsubmit="handleEmailSubmit(event)">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Full Name *</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="form-input"
+                            required
+                            placeholder="John Doe"
+                            aria-required="true"
+                        >
+                        <div class="form-error" id="nameError">Please enter your name</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address *</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="form-input"
+                            required
+                            placeholder="john@example.com"
+                            aria-required="true"
+                        >
+                        <div class="form-error" id="emailError">Please enter a valid email</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="organization">Organization</label>
+                        <input
+                            type="text"
+                            id="organization"
+                            name="organization"
+                            class="form-input"
+                            placeholder="Venture Capital Fund / Angel Investor"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="role">Role</label>
+                        <input
+                            type="text"
+                            id="role"
+                            name="role"
+                            class="form-input"
+                            placeholder="Partner / Managing Director"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-checkbox">
+                            <input
+                                type="checkbox"
+                                id="accredited"
+                                name="accredited"
+                                required
+                                aria-required="true"
+                            >
+                            <label for="accredited">
+                                I confirm that I am an accredited investor or qualified institutional buyer *
+                            </label>
+                        </div>
+                        <div class="form-error" id="accreditedError">This confirmation is required</div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-checkbox">
+                            <input
+                                type="checkbox"
+                                id="privacy"
+                                name="privacy"
+                                required
+                                aria-required="true"
+                            >
+                            <label for="privacy">
+                                I agree to receive investor updates and acknowledge the confidential nature of these materials *
+                            </label>
+                        </div>
+                        <div class="form-error" id="privacyError">Please accept to continue</div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: var(--space-4);" id="submitBtn">
+                        Get Instant Access
+                    </button>
+                </form>
+            </div>
+
+            <div id="modalSuccess" style="display: none;">
+                <div class="form-success">
+                    <div class="success-icon">✓</div>
+                    <h3 style="margin-bottom: var(--space-2);">Check Your Email!</h3>
+                    <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4);">
+                        We've sent you access links to:
+                    </p>
+                    <ul style="text-align: left; color: var(--color-text-secondary); margin-bottom: var(--space-4);">
+                        <li style="margin-bottom: var(--space-1);">Interactive product demo</li>
+                        <li style="margin-bottom: var(--space-1);">Full investor deck (PDF)</li>
+                        <li style="margin-bottom: var(--space-1);">FAST agreement and terms</li>
+                        <li style="margin-bottom: var(--space-1);">Financial model and projections</li>
+                    </ul>
+                    <p style="font-size: var(--font-size-sm); color: var(--color-text-tertiary);">
+                        Didn't receive it? Check your spam folder or contact investors@pm33.com
+                    </p>
+                    <button class="btn btn-primary" onclick="closeEmailModal()" style="margin-top: var(--space-4);">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <script>
+        // ==================== INITIALIZATION ====================
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeAnimations();
+            initializeProgressIndicator();
+            initializeStickyCTA();
+            initializeMetricCounters();
+            initializeFundBars();
+            initializeMRRChart();
+            initializeAnalytics();
+        });
+
+        // ==================== PROGRESS INDICATOR ====================
+        function initializeProgressIndicator() {
+            const progressBar = document.getElementById('progress-indicator');
+
+            window.addEventListener('scroll', () => {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+
+                progressBar.style.width = scrollPercentage + '%';
+            });
+        }
+
+        // ==================== STICKY CTA ====================
+        function initializeStickyCTA() {
+            const stickyCTA = document.getElementById('stickyCta');
+            const heroSection = document.getElementById('hero');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        stickyCTA.classList.add('visible');
+                    } else {
+                        stickyCTA.classList.remove('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            observer.observe(heroSection);
+        }
+
+        // ==================== METRIC COUNTERS ====================
+        function initializeMetricCounters() {
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                        animateCounter(entry.target);
+                        entry.target.classList.add('counted');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.metric-value[data-target]').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        function animateCounter(element) {
+            const target = parseFloat(element.dataset.target);
+            const suffix = element.dataset.suffix || '';
+            const duration = 2000;
+            const steps = 60;
+            const increment = target / steps;
+            const stepDuration = duration / steps;
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+
+                const displayValue = current.toFixed(1);
+                element.textContent = displayValue + suffix;
+            }, stepDuration);
+        }
+
+        // ==================== FUND ALLOCATION BARS ====================
+        function initializeFundBars() {
+            const observerOptions = {
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bars = entry.target.querySelectorAll('.fund-fill');
+                        bars.forEach((bar, index) => {
+                            setTimeout(() => {
+                                bar.style.width = bar.dataset.width;
+                            }, index * 200);
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const fundsList = document.querySelector('.funds-list');
+            if (fundsList) {
+                observer.observe(fundsList);
+            }
+        }
+
+        // ==================== MRR CHART ====================
+        function initializeMRRChart() {
+            const ctx = document.getElementById('mrrChart');
+            if (!ctx) return;
+
+            // Generate 18 months of data
+            const labels = [];
+            const data = [];
+            let currentMRR = 5; // Starting MRR in thousands
+            const growthRate = 0.17; // 17% average monthly growth
+
+            for (let i = 0; i < 18; i++) {
+                const date = new Date();
+                date.setMonth(date.getMonth() + i);
+                labels.push(date.toLocaleDateString('en-US', { month: 'short', year: '2-digit' }));
+
+                data.push(currentMRR);
+                currentMRR = currentMRR * (1 + growthRate);
+            }
+
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'MRR ($K)',
+                        data: data,
+                        borderColor: 'rgb(0, 82, 204)',
+                        backgroundColor: 'rgba(0, 82, 204, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        pointRadius: 4,
+                        pointHoverRadius: 6,
+                        pointBackgroundColor: 'rgb(0, 82, 204)',
+                        pointBorderColor: '#fff',
+                        pointBorderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            padding: 12,
+                            titleFont: {
+                                size: 14,
+                                weight: 'bold'
+                            },
+                            bodyFont: {
+                                size: 13
+                            },
+                            callbacks: {
+                                label: function(context) {
+                                    return 'MRR: $' + context.parsed.y.toFixed(1) + 'K';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value + 'K';
+                                },
+                                font: {
+                                    size: 12
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.05)'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                font: {
+                                    size: 12
+                                }
+                            },
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // ==================== SCROLL ANIMATIONS ====================
+        function initializeAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe sections for fade-in animation
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+        }
+
+        // ==================== EMAIL MODAL ====================
+        function openEmailModal() {
+            const modal = document.getElementById('emailModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Focus first input for accessibility
+            setTimeout(() => {
+                document.getElementById('name').focus();
+            }, 100);
+
+            // Track modal open
+            trackEvent('modal_open', {
+                modal_type: 'email_capture'
+            });
+        }
+
+        function closeEmailModal() {
+            const modal = document.getElementById('emailModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+
+            // Reset form after closing
+            setTimeout(() => {
+                resetEmailForm();
+            }, 300);
+        }
+
+        function resetEmailForm() {
+            document.getElementById('emailForm').reset();
+            document.getElementById('modalForm').style.display = 'block';
+            document.getElementById('modalSuccess').style.display = 'none';
+
+            // Clear any error states
+            document.querySelectorAll('.form-input').forEach(input => {
+                input.classList.remove('error');
+            });
+            document.querySelectorAll('.form-error').forEach(error => {
+                error.classList.remove('visible');
+            });
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeEmailModal();
+            }
+        });
+
+        // ==================== FORM VALIDATION & SUBMISSION ====================
+        function handleEmailSubmit(event) {
+            event.preventDefault();
+
+            // Clear previous errors
+            document.querySelectorAll('.form-input').forEach(input => {
+                input.classList.remove('error');
+            });
+            document.querySelectorAll('.form-error').forEach(error => {
+                error.classList.remove('visible');
+            });
+
+            // Validate form
+            let isValid = true;
+
+            const name = document.getElementById('name');
+            if (!name.value.trim()) {
+                showError('name', 'nameError');
+                isValid = false;
+            }
+
+            const email = document.getElementById('email');
+            if (!email.value.trim() || !isValidEmail(email.value)) {
+                showError('email', 'emailError');
+                isValid = false;
+            }
+
+            const accredited = document.getElementById('accredited');
+            if (!accredited.checked) {
+                document.getElementById('accreditedError').classList.add('visible');
+                isValid = false;
+            }
+
+            const privacy = document.getElementById('privacy');
+            if (!privacy.checked) {
+                document.getElementById('privacyError').classList.add('visible');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                return false;
+            }
+
+            // Show loading state
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner"></span> Submitting...';
+
+            // Collect form data
+            const formData = {
+                name: name.value,
+                email: email.value,
+                organization: document.getElementById('organization').value,
+                role: document.getElementById('role').value,
+                accredited: accredited.checked,
+                timestamp: new Date().toISOString()
+            };
+
+            // Track form submission
+            trackEvent('form_submit', {
+                form_type: 'investor_access',
+                ...formData
+            });
+
+            // Simulate API call (replace with actual endpoint)
+            setTimeout(() => {
+                // TODO: Replace with actual API call
+                // fetch('/api/investor-access', {
+                //     method: 'POST',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify(formData)
+                // })
+                // .then(response => response.json())
+                // .then(data => {
+                //     showSuccess();
+                // })
+                // .catch(error => {
+                //     console.error('Error:', error);
+                //     alert('Something went wrong. Please try again or contact investors@pm33.com');
+                //     submitBtn.disabled = false;
+                //     submitBtn.innerHTML = originalText;
+                // });
+
+                // For demo purposes, show success immediately
+                showSuccess();
+
+                // Track conversion
+                trackEvent('conversion', {
+                    conversion_type: 'investor_signup'
+                });
+            }, 1500);
+
+            return false;
+        }
+
+        function showError(inputId, errorId) {
+            document.getElementById(inputId).classList.add('error');
+            document.getElementById(errorId).classList.add('visible');
+        }
+
+        function isValidEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function showSuccess() {
+            document.getElementById('modalForm').style.display = 'none';
+            document.getElementById('modalSuccess').style.display = 'block';
+        }
+
+
+        // ==================== ANALYTICS ====================
+        function initializeAnalytics() {
+            // Initialize Google Analytics 4
+            // TODO: Replace with your GA4 measurement ID
+            // window.dataLayer = window.dataLayer || [];
+            // function gtag(){dataLayer.push(arguments);}
+            // gtag('js', new Date());
+            // gtag('config', 'G-XXXXXXXXXX');
+
+            // Track page view
+            trackEvent('page_view', {
+                page_title: document.title,
+                page_location: window.location.href
+            });
+
+            // Track scroll depth
+            let maxScroll = 0;
+            window.addEventListener('scroll', debounce(() => {
+                const scrollPercentage = Math.round(
+                    (window.pageYOffset / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+                );
+
+                if (scrollPercentage > maxScroll && scrollPercentage % 25 === 0) {
+                    maxScroll = scrollPercentage;
+                    trackEvent('scroll_depth', {
+                        depth: scrollPercentage
+                    });
+                }
+            }, 500));
+
+            // Track CTA clicks
+            document.querySelectorAll('.btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    trackEvent('cta_click', {
+                        cta_text: e.target.textContent.trim(),
+                        cta_location: e.target.closest('section')?.id || 'unknown'
+                    });
+                });
+            });
+
+            // Track section views
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.target.id) {
+                        trackEvent('section_view', {
+                            section_id: entry.target.id
+                        });
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.querySelectorAll('section[id]').forEach(section => {
+                sectionObserver.observe(section);
+            });
+        }
+
+        function trackEvent(eventName, eventParams = {}) {
+            // Console log for development
+            console.log('Analytics Event:', eventName, eventParams);
+
+            // Google Analytics 4
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, eventParams);
+            }
+
+            // You can add other analytics platforms here
+            // Example: Mixpanel, Segment, etc.
+        }
+
+        // ==================== UTILITY FUNCTIONS ====================
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // ==================== SMOOTH SCROLL FOR ANCHOR LINKS ====================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+
+                e.preventDefault();
+                const target = document.querySelector(href);
+
+                if (target) {
+                    const offsetTop = target.offsetTop - 80; // Account for sticky nav
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+
+                    trackEvent('navigation_click', {
+                        link_destination: href
+                    });
+                }
+            });
+        });
+
+        // ==================== ACCESSIBILITY ENHANCEMENTS ====================
+
+        // Announce dynamic content changes to screen readers
+        function announceToScreenReader(message) {
+            const announcement = document.createElement('div');
+            announcement.setAttribute('role', 'status');
+            announcement.setAttribute('aria-live', 'polite');
+            announcement.className = 'sr-only';
+            announcement.textContent = message;
+            document.body.appendChild(announcement);
+
+            setTimeout(() => {
+                document.body.removeChild(announcement);
+            }, 1000);
+        }
+
+    </script>
+</body>
+</html>

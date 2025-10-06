@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM33 - AI-Powered Product Intelligence Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #2563eb;
+            --secondary: #10b981;
+            --accent: #8b5cf6;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-4: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--dark);
+            color: var(--light);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            position: relative;
+        }
+        
+        /* Animated background */
+        .bg-animation {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            opacity: 0.8;
+            background: linear-gradient(270deg, #0f172a, #1e293b, #334155);
+            background-size: 600% 600%;
+            animation: gradientShift 20s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50% }
+            50% { background-position: 100% 50% }
+            100% { background-position: 0% 50% }
+        }
+        
+        .floating-nodes {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .node {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(139, 92, 246, 0.6);
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        .node::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 60px;
+            background: linear-gradient(to bottom, rgba(139, 92, 246, 0.3), transparent);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            25% { transform: translateY(-20px) translateX(10px); }
+            50% { transform: translateY(10px) translateX(-10px); }
+            75% { transform: translateY(-10px) translateX(20px); }
+        }
+        
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 3rem 2rem;
+            z-index: 10;
+        }
+        
+        /* Gradient backgrounds for different slides */
+        .slide:nth-child(odd) {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+        }
+        
+        .slide:nth-child(even) {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(37, 99, 235, 0.05) 100%);
+        }
+        
+        .container {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Logo */
+        .logo-container {
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .logo {
+            width: 200px;
+            height: auto;
+            filter: drop-shadow(0 10px 30px rgba(139, 92, 246, 0.3));
+            animation: logoGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes logoGlow {
+            0%, 100% { filter: drop-shadow(0 10px 30px rgba(139, 92, 246, 0.3)); }
+            50% { filter: drop-shadow(0 20px 40px rgba(139, 92, 246, 0.5)); }
+        }
+        
+        h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleSlide 1s ease-out;
+        }
+        
+        @keyframes titleSlide {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        h2 {
+            font-size: clamp(2.5rem, 7vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: var(--light);
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-1);
+            border-radius: 2px;
+        }
+        
+        h3 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        p {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.75rem;
+            color: #94a3b8;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Metric cards with glassmorphism */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .metric-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: cardEntry 0.8s ease-out both;
+        }
+        
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+        }
+        
+        .metric-card:hover::before {
+            opacity: 0.05;
+        }
+        
+        @keyframes cardEntry {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .metric-card:nth-child(1) { animation-delay: 0.1s; }
+        .metric-card:nth-child(2) { animation-delay: 0.2s; }
+        .metric-card:nth-child(3) { animation-delay: 0.3s; }
+        .metric-card:nth-child(4) { animation-delay: 0.4s; }
+        
+        .metric-value {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .metric-label {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Charts */
+        .chart-container {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .growth-chart {
+            height: 400px;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            padding: 2rem 1rem;
+        }
+        
+        .chart-bar {
+            flex: 1;
+            background: var(--gradient-1);
+            border-radius: 10px 10px 0 0;
+            margin: 0 0.5rem;
+            position: relative;
+            animation: growBar 1.5s ease-out both;
+            transition: all 0.3s ease;
+        }
+        
+        .chart-bar:hover {
+            transform: translateY(-10px);
+            filter: brightness(1.2);
+        }
+        
+        @keyframes growBar {
+            from {
+                height: 0;
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .chart-bar:nth-child(1) { height: 30%; animation-delay: 0.1s; }
+        .chart-bar:nth-child(2) { height: 45%; animation-delay: 0.2s; }
+        .chart-bar:nth-child(3) { height: 65%; animation-delay: 0.3s; }
+        .chart-bar:nth-child(4) { height: 85%; animation-delay: 0.4s; }
+        .chart-bar:nth-child(5) { height: 100%; animation-delay: 0.5s; }
+        
+        .chart-label {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #94a3b8;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+        
+        .chart-value {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--light);
+            font-weight: 700;
+            font-size: 1.1rem;
+            white-space: nowrap;
+        }
+        
+        /* Feature cards */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .feature-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 3rem 0;
+            margin: 3rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, transparent, var(--primary), var(--accent), transparent);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin: 4rem 0;
+            position: relative;
+            animation: slideIn 0.8s ease-out both;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+            animation-name: slideInReverse;
+        }
+        
+        @keyframes slideInReverse {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .timeline-content {
+            flex: 1;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: scale(1.05);
+            border-color: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            border: 3px solid var(--dark);
+            z-index: 2;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+        }
+        
+        .timeline-date {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-1);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 700;
+            white-space: nowrap;
+            top: -20px;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+        }
+        
+        /* Team section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin: 3rem 0;
+        }
+        
+        .team-member {
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+        
+        .team-member:nth-child(1) { animation-delay: 0.1s; }
+        .team-member:nth-child(2) { animation-delay: 0.2s; }
+        .team-member:nth-child(3) { animation-delay: 0.3s; }
+        
+        .team-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .team-avatar:hover {
+            transform: scale(1.1);
+            box-shadow: 0 30px 80px rgba(139, 92, 246, 0.4);
+        }
+        
+        .team-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-role {
+            font-size: 1.2rem;
+            color: #10b981;
+            margin-bottom: 1rem;
+        }
+        
+        .team-bio {
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+        
+        /* Pagination */
+        .pagination {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 100;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .page-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .page-indicator:hover {
+            background: rgba(139, 92, 246, 0.6);
+            transform: scale(1.2);
+        }
+        
+        .page-indicator.active {
+            width: 40px;
+            border-radius: 20px;
+            background: var(--gradient-1);
+        }
+        
+        /* Navigation arrows */
+        .nav-arrow {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+            color: var(--light);
+        }
+        
+        .nav-arrow:hover {
+            background: rgba(139, 92, 246, 0.3);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .nav-arrow.prev { left: 2rem; }
+        .nav-arrow.next { right: 2rem; }
+        
+        /* CTA button */
+        .cta-button {
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            background: var(--gradient-1);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 30px 80px rgba(139, 92, 246, 0.5);
+        }
+        
+        .cta-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        /* Comparison table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .comparison-table th {
+            background: rgba(139, 92, 246, 0.1);
+            font-weight: 700;
+            color: var(--light);
+            font-size: 1.1rem;
+        }
+        
+        .comparison-table tr {
+            transition: all 0.3s ease;
+        }
+        
+        .comparison-table tr:hover {
+            background: rgba(139, 92, 246, 0.05);
+        }
+        
+        .check {
+            color: #10b981;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .cross {
+            color: #ef4444;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 2rem;
+            }
+            
+            .timeline-item,
+            .timeline-item:nth-child(odd) {
+                flex-direction: column;
+                padding-left: 4rem;
+            }
+            
+            .timeline-dot {
+                left: 2rem;
+            }
+            
+            .timeline-date {
+                left: 4rem;
+                transform: none;
+            }
+            
+            .nav-arrow {
+                display: none;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); }
+            70% { box-shadow: 0 0 0 30px rgba(139, 92, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+        }
+        
+        .slide-counter {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: #64748b;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated background -->
+    <div class="bg-animation"></div>
+    <div class="floating-nodes" id="nodes-container"></div>
+    
+    <!-- Navigation -->
+    <div class="nav-arrow prev" onclick="navigateSlide(-1)">←</div>
+    <div class="nav-arrow next" onclick="navigateSlide(1)">→</div>
+    
+    <!-- Pagination -->
+    <div class="pagination">
+        <span class="page-indicator active" onclick="scrollToSlide(0)"></span>
+        <span class="page-indicator" onclick="scrollToSlide(1)"></span>
+        <span class="page-indicator" onclick="scrollToSlide(2)"></span>
+        <span class="page-indicator" onclick="scrollToSlide(3)"></span>
+        <span class="page-indicator" onclick="scrollToSlide(4)"></span>
+        <span class="page-indicator" onclick="scrollToSlide(5)"></span>
+        <span class="page-indicator" onclick="scrollToSlide(6)"></span>
+        <span class="page-indicator" onclick="scrollToSlide(7)"></span>
+        <span class="page-indicator" onclick="scrollToSlide(8)"></span>
+        <span class="page-indicator" onclick="scrollToSlide(9)"></span>
+    </div>
+
+    <!-- Slide 1: Title -->
+    <section class="slide" id="slide-0">
+        <span class="slide-counter">1 / 10</span>
+        <div class="container fade-in">
+            <div style="text-align: center;">
+                <div class="logo-container">
+                    <img src="data:image/svg+xml,%3Csvg viewBox='0 0 200 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23667eea' /%3E%3Cstop offset='100%25' style='stop-color:%23764ba2' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ctext x='50%25' y='50%25' font-size='48' font-weight='900' fill='url(%23grad)' text-anchor='middle' dominant-baseline='middle'%3EPM33%3C/text%3E%3C/svg%3E" alt="PM33 Logo" class="logo">
+                </div>
+                <h1>Transforming Product Management with AI</h1>
+                <p class="hero-subtitle">Ship Revenue-Driving Features 3x Faster</p>
+                <h3>The Intelligence Layer Between Strategy & Execution</h3>
+                <br><br>
+                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                    <div class="metric-card" style="max-width: 200px;">
+                        <div class="metric-value">$50K</div>
+                        <div class="metric-label">Q1 2025 Target</div>
+                    </div>
+                    <div class="metric-card" style="max-width: 200px;">
+                        <div class="metric-value">3x</div>
+                        <div class="metric-label">Velocity Gain</div>
+                    </div>
+                    <div class="metric-card" style="max-width: 200px;">
+                        <div class="metric-value">Beta</div>
+                        <div class="metric-label">Live Oct 2024</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 2: The Problem -->
+    <section class="slide" id="slide-1">
+        <span class="slide-counter">2 / 10</span>
+        <div class="container fade-in">
+            <h2>The $2.1B Problem</h2>
+            <p style="text-align: center; font-size: 1.5rem; margin-bottom: 3rem;">Product Managers are drowning in tool fragmentation while missing strategic opportunities</p>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">87%</div>
+                    <div class="metric-label">PMs struggle with strategic decisions</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">40%</div>
+                    <div class="metric-label">Time lost on alignment</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">8hrs</div>
+                    <div class="metric-label">Per strategic decision</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$5K</div>
+                    <div class="metric-label">Quarterly consultant spend</div>
+                </div>
+            </div>
+            
+            <div class="chart-container" style="margin-top: 3rem;">
+                <h3 style="text-align: center;">The Growing Gap: PM Tools vs PM Needs</h3>
+                <div class="growth-chart">
+                    <div class="chart-bar">
+                        <span class="chart-value">4</span>
+                        <span class="chart-label">2020</span>
+                    </div>
+                    <div class="chart-bar">
+                        <span class="chart-value">6</span>
+                        <span class="chart-label">2021</span>
+                    </div>
+                    <div class="chart-bar">
+                        <span class="chart-value">8</span>
+                        <span class="chart-label">2022</span>
+                    </div>
+                    <div class="chart-bar">
+                        <span class="chart-value">11</span>
+                        <span class="chart-label">2023</span>
+                    </div>
+                    <div class="chart-bar">
+                        <span class="chart-value">15+</span>
+                        <span class="chart-label">2024</span>
+                    </div>
+                </div>
+                <p style="text-align: center; margin-top: 3rem; color: #94a3b8;">Average number of tools used per PM team</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Solution -->
+    <section class="slide" id="slide-2">
+        <span class="slide-counter">3 / 10</span>
+        <div class="container fade-in">
+            <h2>PM33: AI-Powered Intelligence Layer</h2>
+            <p style="text-align: center; font-size: 1.5rem; margin-bottom: 3rem;">Transform fragmented workflows into unified, AI-driven strategic execution</p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Strategic AI Brain</h3>
+                    <p>Analyzes company strategy, market data, and execution metrics for optimal decisions</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>3x Velocity Boost</h3>
+                    <p>Reduce decision cycles from days to minutes with automated intelligence</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Zero Migration</h3>
+                    <p>Works with Jira, Linear, Notion - intelligence layer on top of existing tools</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Revenue Focus</h3>
+                    <p>Every feature scored for revenue impact and market opportunity</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Strategic Alignment</h3>
+                    <p>Ensures every task traces back to strategic objectives</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Predictive Analytics</h3>
+                    <p>AI predicts feature success and resource requirements</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Market Opportunity -->
+    <section class="slide" id="slide-3">
+        <span class="slide-counter">4 / 10</span>
+        <div class="container fade-in">
+            <h2>$312M AI-PM Market Growing 23% Annually</h2>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">$2.1B</div>
+                    <div class="metric-label">Total PM Software Market</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$312M</div>
+                    <div class="metric-label">AI-Enhanced PM Tools</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">334K</div>
+                    <div class="metric-label">Target PMs (Scale-ups)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">23%</div>
+                    <div class="metric-label">CAGR 2024-2027</div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3 style="text-align: center;">Our Beachhead Market Segments</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Segment</th>
+                            <th>Company Size</th>
+                            <th>Current Tool Spend</th>
+                            <th>PM33 Pricing</th>
+                            <th>Market Size</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Scale-up PMs</strong></td>
+                            <td>50-500 employees</td>
+                            <td>$5-15K/year</td>
+                            <td>$99/month</td>
+                            <td>30,000 PMs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Enterprise Teams</strong></td>
+                            <td>500+ employees</td>
+                            <td>$50-200K/year</td>
+                            <td>$199-399/month</td>
+                            <td>10,000 teams</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Startup Founders</strong></td>
+                            <td>5-50 employees</td>
+                            <td>$500-3K/year</td>
+                            <td>$29/month</td>
+                            <td>50,000 startups</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: Business Model -->
+    <section class="slide" id="slide-4">
+        <span class="slide-counter">5 / 10</span>
+        <div class="container fade-in">
+            <h2>SaaS Model with Exceptional Unit Economics</h2>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">$29-399</div>
+                    <div class="metric-label">Monthly Pricing</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">5.6:1</div>
+                    <div class="metric-label">LTV/CAC Ratio</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">68%</div>
+                    <div class="metric-label">Gross Margin</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">3.2mo</div>
+                    <div class="metric-label">Payback Period</div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3 style="text-align: center;">Intelligence Operations Pricing Model</h3>
+                <p style="text-align: center; margin-bottom: 2rem;">Each operation = 30 minutes of strategic analysis ($125 consultant value)</p>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Tier</th>
+                            <th>Price</th>
+                            <th>Included Ops</th>
+                            <th>Value Delivered</th>
+                            <th>Target Customer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Starter</strong></td>
+                            <td>$29/mo</td>
+                            <td>500 ops</td>
+                            <td>$37,500</td>
+                            <td>Individual PMs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Team</strong></td>
+                            <td>$99/mo</td>
+                            <td>2,000 ops</td>
+                            <td>$150,000</td>
+                            <td>3-10 PMs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scale</strong></td>
+                            <td>$199/mo</td>
+                            <td>5,000 ops</td>
+                            <td>$375,000</td>
+                            <td>10-50 PMs</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Enterprise</strong></td>
+                            <td>$399/mo</td>
+                            <td>Unlimited</td>
+                            <td>Unlimited</td>
+                            <td>50+ PMs</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: Growth Trajectory -->
+    <section class="slide" id="slide-5">
+        <span class="slide-counter">6 / 10</span>
+        <div class="container fade-in">
+            <h2>Path to $50K MRR by Q1 2025</h2>
+            <p style="text-align: center; font-size: 1.5rem;">Beta launched October 2024 - Rapid growth trajectory ahead</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Oct 2024</div>
+                    <div class="timeline-content">
+                        <h3>Beta Launch ✓</h3>
+                        <p>Live with early customers<br>Product validation phase<br>Initial feedback loop</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Nov-Dec 2024</div>
+                    <div class="timeline-content">
+                        <h3>Foundation</h3>
+                        <p>100 beta users<br>Core features complete<br>$5K MRR target</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Jan 2025</div>
+                    <div class="timeline-content">
+                        <h3>Public Launch</h3>
+                        <p>Product Hunt launch<br>Marketing automation<br>$15K MRR target</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Feb 2025</div>
+                    <div class="timeline-content">
+                        <h3>Growth Phase</h3>
+                        <p>500 customers<br>Community building<br>$30K MRR target</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Mar 2025</div>
+                    <div class="timeline-content">
+                        <h3>Scale Milestone</h3>
+                        <p>750+ customers<br>Enterprise features<br><strong>$50K MRR achieved</strong></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3 style="text-align: center;">MRR Growth Projection</h3>
+                <div class="growth-chart">
+                    <div class="chart-bar" style="height: 10%;">
+                        <span class="chart-value">$5K</span>
+                        <span class="chart-label">Dec '24</span>
+                    </div>
+                    <div class="chart-bar" style="height: 30%;">
+                        <span class="chart-value">$15K</span>
+                        <span class="chart-label">Jan '25</span>
+                    </div>
+                    <div class="chart-bar" style="height: 60%;">
+                        <span class="chart-value">$30K</span>
+                        <span class="chart-label">Feb '25</span>
+                    </div>
+                    <div class="chart-bar" style="height: 100%;">
+                        <span class="chart-value">$50K</span>
+                        <span class="chart-label">Mar '25</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 7: Competitive Advantage -->
+    <section class="slide" id="slide-6">
+        <span class="slide-counter">7 / 10</span>
+        <div class="container fade-in">
+            <h2>Why PM33 Wins: AI-Native Advantage</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Capability</th>
+                        <th>PM33</th>
+                        <th>Jira + AI</th>
+                        <th>ProductBoard</th>
+                        <th>Consultants</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Strategic Intelligence</strong></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>10-minute Setup</strong></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Monthly Cost</strong></td>
+                        <td>$29-399</td>
+                        <td>$80+</td>
+                        <td>$75+</td>
+                        <td>$5,000+</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Learning AI</strong></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="cross">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Execution Bridge</strong></td>
+                        <td><span class="check">✓</span></td>
+                        <td>Partial</td>
+                        <td>Partial</td>
+                        <td><span class="cross">✗</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Real-time Updates</strong></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="check">✓</span></td>
+                        <td><span class="cross">✗</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="feature-grid" style="margin-top: 3rem;">
+                <div class="feature-card">
+                    <h3>🏆 Our Moats</h3>
+                    <p>• Company-specific AI training<br>
+                    • Network effects from shared patterns<br>
+                    • Deep integration ecosystem<br>
+                    • First-mover in AI-native PM</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🚀 6-Month Advantages</h3>
+                    <p>• Customer data training advantage<br>
+                    • Established integration network<br>
+                    • Community brand recognition<br>
+                    • Proven ROI case studies</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔒 12-Month Defensibility</h3>
+                    <p>• Proprietary AI models<br>
+                    • Enterprise relationships<br>
+                    • Category definition ownership<br>
+                    • Platform network effects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 8: Go-to-Market -->
+    <section class="slide" id="slide-7">
+        <span class="slide-counter">8 / 10</span>
+        <div class="container fade-in">
+            <h2>Community-Driven Growth Engine</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🚀 Product-Led Growth</h3>
+                    <p>• Free velocity assessment tool<br>
+                    • 14-day full-feature trial<br>
+                    • In-product viral mechanics<br>
+                    • Self-serve onboarding</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📚 Content Marketing</h3>
+                    <p>• PM best practices library<br>
+                    • SEO-optimized guides<br>
+                    • Weekly newsletter (5K subs)<br>
+                    • YouTube tutorials</p>
+                </div>
+                <div class="feature-card">
+                    <h3>👥 Community Building</h3>
+                    <p>• PM33 Slack (1K members)<br>
+                    • Weekly office hours<br>
+                    • Customer success stories<br>
+                    • PM33 certification program</p>
+                </div>
+            </div>
+            
+            <div class="chart-container">
+                <h3 style="text-align: center;">Growth Metrics & Targets</h3>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">$284</div>
+                        <div class="metric-label">CAC Target</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">25%</div>
+                        <div class="metric-label">Trial → Paid</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">0.3</div>
+                        <div class="metric-label">Viral Coefficient</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">120%</div>
+                        <div class="metric-label">Net Revenue Retention</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 9: Team -->
+    <section class="slide" id="slide-8">
+        <span class="slide-counter">9 / 10</span>
+        <div class="container fade-in">
+            <h2>Founding Team</h2>
+            <p style="text-align: center; font-size: 1.5rem; margin-bottom: 3rem;">Deep expertise in product, AI, and enterprise software</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-avatar">GA</div>
+                    <h3 class="team-name">George Alexandrov</h3>
+                    <p class="team-role">Co-Founder & CEO</p>
+                    <p class="team-bio">Serial entrepreneur with 15+ years in product and technology. Previously founded and scaled multiple ventures in fintech and enterprise software.</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">SK</div>
+                    <h3 class="team-name">Simeon Krivoshiev</h3>
+                    <p class="team-role">Co-Founder & CTO</p>
+                    <p class="team-bio">Technical architect with deep expertise in AI/ML and distributed systems. Former engineering leader at enterprise SaaS companies.</p>
+                </div>
+                <div class="team-member">
+                    <div class="team-avatar">SS</div>
+                    <h3 class="team-name">Steven Saper</h3>
+                    <p class="team-role">Co-Founder & Head of Product</p>
+                    <p class="team-bio">Product visionary with experience building and scaling B2B SaaS products. Expert in product-led growth and enterprise adoption.</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <h3>Advisory Board</h3>
+                <p style="font-size: 1.2rem; color: #94a3b8;">Leaders from Productboard • Linear • Notion • OpenAI • Atlassian</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 10: Ask & Use of Funds -->
+    <section class="slide" id="slide-9">
+        <span class="slide-counter">10 / 10</span>
+        <div class="container fade-in">
+            <h2>Raising $1.5M Seed Round</h2>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value">$1.5M</div>
+                    <div class="metric-label">Seed Round Size</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$7-10M</div>
+                    <div class="metric-label">Pre-money Valuation</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">18mo</div>
+                    <div class="metric-label">Runway Target</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-value">$100K</div>
+                    <div class="metric-label">MRR by EOY 2025</div>
+                </div>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>40% Product & AI</h3>
+                    <p>• AI infrastructure scaling<br>
+                    • Enterprise features<br>
+                    • Integration ecosystem<br>
+                    • Security & compliance</p>
+                </div>
+                <div class="feature-card">
+                    <h3>35% Go-to-Market</h3>
+                    <p>• Sales team build-out<br>
+                    • Marketing automation<br>
+                    • Customer success<br>
+                    • Community growth</p>
+                </div>
+                <div class="feature-card">
+                    <h3>25% Operations</h3>
+                    <p>• Key hires (5-7 people)<br>
+                    • Infrastructure costs<br>
+                    • Legal & compliance<br>
+                    • Working capital</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 4rem;">
+                <h3>Why Now?</h3>
+                <p style="font-size: 1.5rem; margin: 2rem 0;">
+                    ✓ Beta live with paying customers<br>
+                    ✓ Product-market fit signals strong<br>
+                    ✓ AI technology inflection point<br>
+                    ✓ Clear path to $5M ARR by 2026
+                </p>
+                <a href="mailto:investors@pm-33.io" class="cta-button pulse">Let's Build the Future of PM Together</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Create floating nodes
+        function createNodes() {
+            const container = document.getElementById('nodes-container');
+            for (let i = 0; i < 20; i++) {
+                const node = document.createElement('div');
+                node.className = 'node';
+                node.style.left = Math.random() * 100 + '%';
+                node.style.top = Math.random() * 100 + '%';
+                node.style.animationDelay = Math.random() * 20 + 's';
+                container.appendChild(node);
+            }
+        }
+        createNodes();
+        
+        // Current slide tracking
+        let currentSlide = 0;
+        const totalSlides = 10;
+        
+        // Smooth scrolling to slides
+        function scrollToSlide(index) {
+            if (index < 0 || index >= totalSlides) return;
+            
+            currentSlide = index;
+            document.getElementById(`slide-${index}`).scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+            updatePagination(index);
+        }
+        
+        // Navigate slides with arrows
+        function navigateSlide(direction) {
+            const newIndex = currentSlide + direction;
+            if (newIndex >= 0 && newIndex < totalSlides) {
+                scrollToSlide(newIndex);
+            }
+        }
+        
+        // Update pagination
+        function updatePagination(activeIndex) {
+            const indicators = document.querySelectorAll('.page-indicator');
+            indicators.forEach((indicator, index) => {
+                if (index === activeIndex) {
+                    indicator.classList.add('active');
+                } else {
+                    indicator.classList.remove('active');
+                }
+            });
+        }
+        
+        // Intersection Observer for slide visibility
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const slideIndex = parseInt(entry.target.id.split('-')[1]);
+                    currentSlide = slideIndex;
+                    updatePagination(slideIndex);
+                    
+                    // Animate elements as they come into view
+                    const elements = entry.target.querySelectorAll('.metric-card, .feature-card, .timeline-item');
+                    elements.forEach((el, index) => {
+                        if (!el.classList.contains('animated')) {
+                            setTimeout(() => {
+                                el.style.animation = 'none';
+                                el.offsetHeight; // Trigger reflow
+                                el.style.animation = null;
+                                el.classList.add('animated');
+                            }, index * 100);
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all slides
+        document.querySelectorAll('.slide').forEach(slide => {
+            observer.observe(slide);
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+                navigateSlide(1);
+            } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                navigateSlide(-1);
+            } else if (e.key === 'Home') {
+                scrollToSlide(0);
+            } else if (e.key === 'End') {
+                scrollToSlide(totalSlides - 1);
+            }
+        });
+        
+        // Touch/swipe support for mobile
+        let touchStartY = 0;
+        let touchEndY = 0;
+        
+        document.addEventListener('touchstart', (e) => {
+            touchStartY = e.changedTouches[0].screenY;
+        });
+        
+        document.addEventListener('touchend', (e) => {
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            if (touchEndY < touchStartY - 50) {
+                navigateSlide(1); // Swipe up
+            }
+            if (touchEndY > touchStartY + 50) {
+                navigateSlide(-1); // Swipe down
+            }
+        }
+    </script>
+</body>
+</html>
